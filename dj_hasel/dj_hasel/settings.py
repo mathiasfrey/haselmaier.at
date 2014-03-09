@@ -1,5 +1,5 @@
 """
-Django settings for urxn project.
+Django settings for dj_hasel project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'haselsite',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,9 +49,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'urxn.urls'
+ROOT_URLCONF = 'dj_hasel.urls'
 
-WSGI_APPLICATION = 'urxn.wsgi.application'
+WSGI_APPLICATION = 'dj_hasel.wsgi.application'
 
 
 # Database
@@ -58,7 +60,7 @@ WSGI_APPLICATION = 'urxn.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'haselmaier.db.sqlite3'),
     }
 }
 

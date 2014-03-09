@@ -1,0 +1,68 @@
+{% extends "haselsite/bs3_base.html" %}
+
+{# {% block title %}{% endblock %} #}
+
+
+
+{% block content %}
+
+<div id="imagevideo">
+    
+    <div id="logo_wrapper">
+        <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
+            <a href="group.html" class="enable_tooltip" data-toggle="tooltip" data-placement="top"
+               title="Vier Kompetenzbereiche unter einem Dach">
+                <img src="{{ STATIC_URL }}img/corporatedesign/group_logo.png" alt="Haselmaier Group Logo" style="width: 100%" />
+            </a>
+            <div class="row">
+                <div class="col-xs-6 col-md-3"><a class="enable_tooltip" href="living2.html" data-toggle="tooltip" data-placement="bottom"
+                                                  title="Unser Herz schlägt für Holz"><div class="subbrand tischlerei"><h1>Tischlerei</h1></div></a></div>
+                <div class="col-xs-6 col-md-3"><a class="enable_tooltip" href="living2.html" data-toggle="tooltip" data-placement="bottom"
+                                                  title="Wohnen als Kunst"><div class="subbrand wohnart"><h1>Wohn-Art</h1></div></a></div>
+                <div class="col-xs-6 col-md-3"><a class="enable_tooltip" href="living2.html" data-toggle="tooltip" data-placement="bottom"
+                                                  title="Möbel für Einsatzorganisationen"><div class="subbrand leitstellen"><h1>Leitstellen</h1></div></a></div>
+                <div class="col-xs-6 col-md-3"><a class="enable_tooltip" href="living2.html" data-toggle="tooltip" data-placement="bottom"
+                                                  title="Technik sinnvoll eingesetzt"><div class="subbrand etechnik"><h1>E-Technik</h1></div></a></div>
+            </div>
+        </div>
+    </div>
+
+
+   
+    <video autoplay loop poster="{{ STATIC_URL }}assets/img/polina.jpg" id="bgvid" class="hidden-xs">
+      
+      <!-- Serve video content via streaming server -->
+      <!--
+      <source src="http://haselmaier.c99.at/assets/videos/polina.webm" type="video/webm">
+      <source src="http://haselmaier.c99.at/assets/videos/polina.mp4" type="video/mp4">
+      -->
+    </video>
+    
+    <div id="bg_mobile" class="visible-xs">
+        <!-- do not display video  on mobile phones -->
+    </div>
+
+    
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% block js_at_bottom %}
+<!-- tooltips on start page -->
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.enable_tooltip').tooltip();
+});
+</script>
+{% endblock %}
+

@@ -1,0 +1,162 @@
+/*
+Elektrotechnik (BLAU)
+RGB 0/118/189
+
+Wohn-Art (ANTHRAZIT)
+RGB 53/62/72
+
+Haselmaier (ROT)
+RGB 209/0/25
+
+FŸr Alle Grau Wert (Logo Rand)
+RGB 177/179/180
+
+------------------------------
+
+colors found in mockups
+
+dark grey 7e7574
+medium grey 9d9694
+light grey aeadac
+*/
+
+html, body {
+    height: 100%;
+    background: #7e7574;
+    
+}
+
+
+
+#imagevideo {
+
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -50px;
+  /* Pad bottom by footer height */
+  padding: 0 0 50px;
+}
+/* http://demosthenes.info/blog/777/Create-Fullscreen-HTML5-Page-Background-Video */
+#imagevideo #bgvid {
+    position:relative; top: 0;
+    width: 100%;
+    height: auto;
+
+    background: url(/assets/img/polina.jpg) no-repeat;
+    background-size: cover;
+    
+}
+
+#imagevideo #bg_mobile {
+    /* fallback on mobile */
+
+    width: 100%;
+    min-height: 400px;
+
+    background: url(/assets/img/polina.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+#logo_wrapper {
+    
+    /*
+    This is needed to position div according to bootstrap's fluid grid.
+    Otherwise centering would not work.
+    */
+    
+    width:100%;
+    
+    position:absolute;
+    top: 30%;
+    bottom: 50%;
+    
+    z-index:2;
+
+}
+
+#logo {
+    /*
+    Logo goes here.
+    
+    Center this div, but keep it fluid.
+    */
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+   
+    /*background: rgba(0,0,0,.3);*/
+}
+.subbrand {
+    margin-top:5px;
+    padding:10px;
+    background: rgb(177,179,180);
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+}
+.subbrand h1 {
+    font-size:1.2em;
+    font-weight:lighter;
+    color: white;
+    text-transform: uppercase;
+    text-align:center;
+}
+#logo a:hover {
+    text-decoration: none;
+}
+/* some magic with clicking the links*/
+a:active > .subbrand.wohnart,
+a:hover > .subbrand.wohnart {
+    background: rgb(53,62,72);
+}
+a:active > .subbrand.tischlerei,
+a:hover > .subbrand.tischlerei,
+a:active > .subbrand.leitstellen,
+a:hover > .subbrand.leitstellen {
+    background: rgb(209,0,25);
+}
+a:active > .subbrand.etechnik,
+a:hover > .subbrand.etechnik {
+    background: rgb(0,118,189);
+}
+
+
+#footer {
+  /* http://stackoverflow.com/questions/17966140/twitter-bootstrap-3-sticky-footer */
+    padding:10px;
+    height: 50px;
+    
+    font-size:.9em;
+}
+#footer a, #footer a:visited, #footer a:hover {
+    color:#333;
+}
+
+/*
+  call to action + footer
+*/
+#call2action {
+    
+    width:100%;
+
+    
+    z-index:3; /* display over jumbotron*/
+    background:rgb(126,117,116);
+    
+    color: #333;
+    
+    padding:1em;
+    
+}
+footer {
+    
+    background: url('/img/corporatedesign/Logo_Haselmaier.png') no-repeat top right;
+    
+    min-height:250px;
+}

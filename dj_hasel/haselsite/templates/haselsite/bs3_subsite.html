@@ -1,0 +1,33 @@
+{% extends "haselsite/bs3_base.html" %}
+
+
+{% block css_at_top %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
+{% endblock %}
+
+
+
+
+{% block content %}
+    
+    {% block navigation %}
+    {% endblock %}
+    
+    
+    {% block jumbotron %}
+    {% endblock%}
+    
+    
+    
+    <div class="container">
+        {% block content_container %}
+        {% endblock %}
+    </div>
+        
+{% endblock content %}
+
+
+       
+{% block js_at_bottom %}
+        <script src="{{ STATIC_URL }}js/main2.js"></script>
+{% endblock %}
