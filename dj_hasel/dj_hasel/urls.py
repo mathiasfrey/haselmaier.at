@@ -6,6 +6,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'haselsite.views.home', name='home'),
+    url(r'^group/$', 'haselsite.views.group', name='group'),
+    
     # url(r'^blog/', include('blog.urls')),
 
     #url(r'^admin/', include(admin.site.urls)),
