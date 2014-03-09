@@ -1,0 +1,1 @@
+-e git+https://bitbucket.org/mathiascfrey/haselmaier.at/haselsite.git/#egg=haselsite
