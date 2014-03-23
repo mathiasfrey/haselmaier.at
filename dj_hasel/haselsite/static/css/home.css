@@ -21,29 +21,18 @@ light grey aeadac
 */
 
 html, body {
-    height: 100%;
-    background: #7e7574;
-    
+    /*height: 100%;*/
+    background: #7e7574; 
 }
 
 
-
-#imagevideo {
-
-  min-height: 100%;
-  height: auto;
-  /* Negative indent footer by its height */
-  margin: 0 auto -50px;
-  /* Pad bottom by footer height */
-  padding: 0 0 50px;
-}
 /* http://demosthenes.info/blog/777/Create-Fullscreen-HTML5-Page-Background-Video */
 #imagevideo #bgvid {
     position:relative; top: 0;
     width: 100%;
     height: auto;
 
-    background: url(../assets/img/polina.jpg) no-repeat;
+    background: url(http://c99.at/haselmaier_assets/handholz.jpg) no-repeat;
     background-size: cover;
     
 }
@@ -54,7 +43,7 @@ html, body {
     width: 100%;
     min-height: 400px;
 
-    background: url(../assets/img/polina.jpg) no-repeat;
+    background: url(http://c99.at/haselmaier_assets/handholz.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -101,7 +90,8 @@ html, body {
     border-radius: 5px;    
 }
 .subbrand h1 {
-    font-size:1.2em;
+    margin-top: 12px; /* reduce vertical offset*/
+    font-size:1.05em;
     font-weight:lighter;
     color: white;
     text-transform: uppercase;
@@ -133,14 +123,17 @@ a:hover > .subbrand.etechnik {
 /*
   footer
 */
+#footer_container {
+    background-color:#7e7574;
+}
 footer {
-    /*
-    background: url('../img/corporatedesign/Logo_Haselmaier.png') no-repeat top right;
-    min-height:250px;
-   */
     font-weight:lighter;
     color:#ccc;
 }
 footer h2 {
     font-weight: lighter;
+}
+footer a.footerinfo, footer a.footerinfo:hover, footer a.footerinfo:active, footer a.footerinfo:visited {
+    color: #ccc;
+    text-decoration:underline;
 }

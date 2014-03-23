@@ -1,0 +1,7 @@
+haselmaier TODO
+---------------
+
+robots.txt
+favicon / mobile
+google analytics
+video size
