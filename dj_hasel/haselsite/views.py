@@ -8,4 +8,8 @@ def home(request):
     
 def group(request):
     
-    return render(request, 'haselsite/group.html') 
+    return render(request, 'haselsite/group.html')
+    
+def wohn_art(request):
+    
+    return render(request, 'haselsite/wohn-art.html')  
