@@ -12,11 +12,11 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li {% if active = "group" %}class="active"{%endif%}><a href="{% url group %}" >Group</a></li>
-        <li {% if active = "tischlerei" %}class="active"{%endif%}><a href="{% url tischlerei %}">Tischlerei</a></li>
-        <li {% if active = "wohn-art" %}class="active"{%endif%}><a href="{% url wohn_art %}">Wohn-Art</a></li>
-        <li {% if active = "leitstellen" %}class="active"{%endif%}><a href="{% url leitstellen %}">Leitstellen</a></li>
-        <li {% if active = "e-technik" %}class="active"{%endif%}><a href="{% url e_technik %}">E-Technik</a></li>
+        <li {% if active = "group" %}class="active"{%endif%}><a href="{% url "group" %}" >Group</a></li>
+        <li {% if active = "tischlerei" %}class="active"{%endif%}><a href="{% url "tischlerei" %}">Tischlerei</a></li>
+        <li {% if active = "wohn-art" %}class="active"{%endif%}><a href="{% url "wohn_art" %}">Wohn-Art</a></li>
+        <li {% if active = "leitstellen" %}class="active"{%endif%}><a href="{% url "leitstellen" %}">Leitstellen</a></li>
+        <li {% if active = "e-technik" %}class="active"{%endif%}><a href="{% url "e_technik" %}">E-Technik</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
