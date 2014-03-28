@@ -12,4 +12,8 @@ def group(request):
     
 def wohn_art(request):
     
-    return render(request, 'haselsite/wohn-art.html')  
+    return render(request, 'haselsite/wohn-art.html')
+    
+def leitstellen(request):
+    
+    return render(request, 'haselsite/leitstellen.html')      

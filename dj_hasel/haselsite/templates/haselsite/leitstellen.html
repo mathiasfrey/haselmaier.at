@@ -1,0 +1,153 @@
+{% extends "haselsite/bs3_subsite.html" %}
+
+{% block title %}Haselmaier Leitstellen: Möbel für Leitstellen{% endblock %}
+
+{% block css_at_top %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/leitstellen.css">
+{% endblock %}
+
+
+{% block navigation %}
+    {% include "haselsite/navigation.html" with active="leitstellen" %}
+{% endblock %}
+
+
+{% block jumbotron %}
+<div id="jumbotron">
+
+
+    <div id="logo_wrapper">
+        <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
+            <img src="{{ STATIC_URL }}img/corporatedesign/leitstellen_logo.png" alt="Haselmaier Group Logo" style="width: 100%" />
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+{% block content_container %}
+
+<div class="row">
+    
+    <div class="col-md-3 hidden-xs hidden-sm" id="contentScrollspy">
+        <ul class="nav nav-tabs nav-stacked affix" id="myAffix"><!-- data-spy="affix"  data-offset-top="160" -->
+            <li class="active"><a class="innerside-nav" href="#leitstelle">Leitstelle</a></li>
+            <li><a class="innerside-nav" href="#system">System</a></li>
+            <li><a class="innerside-nav" href="#projekte">Projekte</a></li>
+        </ul>
+    </div>
+    
+    
+    <div class="col-md-9" id="start_affix_contentarea">
+      
+      <div id="leitstelle" class="affix_contentarea">
+
+
+        <h1>Haselmaier Leitstellen</h1>
+          
+        <h2>Möbel für Leitstellen und Warten</h2>
+            
+            
+
+          
+
+        <p class="">
+        Haselmaier entwickelt Technikmöbel, die Arbeitsschritte erleichtern und besseres Arbeiten ermöglichen -
+        gerade unter Stress. Die Technik im jeweiligen Kontrollraum bzw. der Einsatzzentrale wird in die Möbel passgenau integriert.
+        </p>
+
+        <img src="{{STATIC_URL}}img/leitstellen/wolfgang_haselmaier.jpg" alt="" style="max-width:600px;" />
+        
+        <blockquote>
+          <p>
+            Nur wer sich wohlfühlt, kann unter Druck gut arbeiten.
+          </p>
+          <small>
+          <cite>Wolfgang Haselmaier</cite>
+          </small>
+        </blockquote>
+        
+        
+        <p>
+        Auf diese Weise bleiben Kabel, Leitungen und Elektronik "unsichtbar" und ermöglichen einen reibungslosen Arbeitsfluss.
+        Der Zusammenbau erfolgt fix und fertig vor Ort zusammen mit der gesamten Technik.
+
+        </p>          
+          
+
+            
+
+
+            
+
+
+
+      </div>
+
+
+      <div id="system" class="affix_contentarea">
+        <h2>Technikmöbel mit System</h2>
+        <p class="">
+        Am Anfang stand eine Idee: das Bauen von Tischen für Leitstellen. Daraus haben sich im Laufe der
+        Jahre komplette Systeme entwickelt.
+        </p>
+        
+        
+        
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_01.jpg" alt="" width="100%"/>
+          </div>
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_02.jpg" alt="" width="100%"/>
+          </div>
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_03.jpg" alt="" width="100%"/>
+          </div>
+        </div>
+        
+        
+        <p>
+        Heute baut Leitstellen Haselmaier alles, was eine Warte benötigt und sich durch Möbel bewegen
+        lässt: Waver Table, Beamer Blackborad, Interface Terminals oder Kameralift. Unsere Technikmöbel mit
+        Sonderfunktion sind innovativ, funktionell und zu 100 Prozent ergonomisch.
+        </p>
+        
+        <p>
+        Nur wer sich wohlfühlt, kann unter Druck gut arbeiten. Unsere Technikmöbel sorgen dafür, dass in
+        der Einsatzzentrale, Leitstelle, Warte und im Kontrollraum die Arbeit leicht von der Hand geht.          
+        </p>
+      
+      </div>
+
+
+      <div id="projekte" class="affix_contentarea">
+        <h2>Projekte &amp; Referenzen</h2>
+          <p class="">
+          ..
+          </p>
+
+          
+          <img src="{{STATIC_URL}}img/leitstellen/Verbund_01.jpg" alt="" />
+          
+          
+          <h3>Referenzen</h3>
+          <ul>
+            <li>Verbund, 2015</li>
+            <li>Wiener Linien, 2019</li>
+          </ul>
+          
+      </div>
+
+
+    
+    </div>
+
+</div>
+
+
+
+{% endblock content_container %}

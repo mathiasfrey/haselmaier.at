@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     url(r'^wohn-art/$', 'haselsite.views.wohn_art', name='wohn_art'),
     url(r'^wohnart/$', RedirectView.as_view(url='/wohn-art/', permanent=False)),
     
-    url(r'^leitstellen/$', 'haselsite.views.group', name='leitstellen'),
+    url(r'^leitstellen/$', 'haselsite.views.leitstellen', name='leitstellen'),
     
     url(r'^e-technik/$', 'haselsite.views.group', name='e_technik'),
     url(r'^etechnik/$', RedirectView.as_view(url='/e-technik/', permanent=False)),
