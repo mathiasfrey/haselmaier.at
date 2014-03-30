@@ -1,0 +1,134 @@
+{% extends "haselsite/bs3_subsite.html" %}
+
+{% block title %}Haselmaier Elektrotechnik: Technik sinnvoll eingesetzt{% endblock %}
+
+{% block css_at_top %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/e-technik.css">
+{% endblock %}
+
+
+{% block navigation %}
+    {% include "haselsite/navigation.html" with active="e-technik" %}
+{% endblock %}
+
+
+{% block jumbotron %}
+<div id="jumbotron">
+
+
+    <div id="logo_wrapper">
+        <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
+            <img src="{{ STATIC_URL }}img/corporatedesign/e-technik_logo.png" alt="Haselmaier E-Technik Logo" style="width: 100%" />
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block content_container %}
+
+<div class="row">
+    
+    <div class="col-md-3 hidden-xs hidden-sm" id="contentScrollspy">
+        <ul class="nav nav-tabs nav-stacked affix" id="myAffix"><!-- data-spy="affix"  data-offset-top="160" -->
+            <li class="active"><a class="innerside-nav" href="#angebot">Angebot</a></li>
+            <li><a class="innerside-nav" href="#projekte">Projekte</a></li>
+        </ul>
+    </div>
+    
+    
+    <div class="col-md-6" id="start_affix_contentarea">
+      
+      <div id="angebot" class="affix_contentarea">
+
+
+        <h1>Haselmaier Elektrotechnik</h1>
+          
+        <h2>Technik sinnvoll eingesetzt</h2>
+            
+ 
+
+        <p class="">
+        Oft werden elektrotechnische Komponenten zu kompliziert und unverhältnismäßig in Bezug auf Preis und Leistung verbaut.
+        </p>
+
+        <p>
+        Von uns bekommen Sie das, was Sie wirklich brauchen: Sinnvoll eingesetzte Technik, zweckmäßig und einfach zu bedienen. Nicht immer muss es etwas Neues sein. Wenn sich eine Reparatur lohnt, dann führen wir sie für Sie durch. 
+        </p>
+
+      </div>
+
+
+      <div id="system" class="affix_contentarea">
+        <h2>Strom fest im Griff</h2>
+        <p class="">
+        Ob Eigenheim, Gewerbe oder Industrie: Wir haben das ganze Spektrum an elektrotechnischen
+        Dienstleistungen im Griff und sind ein verlässlicher Partner für Anlagenbau,
+        Elektroinstallationen und intelligente Haussteuerungen.
+        </p>
+        
+        <p>
+        Zusätzlich entwickeln wir elektrotechnischer Steuerungen für Warten und Leitstellentischtechnik.
+        Im Zuge unserer Tätigkeit haben wir uns auf Komplettlösungen spezialisiert und berücksichtigen
+        auch die übergreifenden Anforderungen, die in diesem Bereich bei Elektroinstallationen notwendig sind.
+         
+        </p>
+      
+      </div>
+
+
+      <div id="projekte" class="affix_contentarea">
+        <h2>Projekte &amp; Referenzen</h2>
+
+          
+          <div class="row">
+            <div class="col-md-4"><img src="{{STATIC_URL}}img/e-technik/image1.jpg" alt="" style="width:100%;" /></div>
+            <div class="col-md-4"><img src="{{STATIC_URL}}img/e-technik/image2.jpg" alt="" style="width:100%;" /></div>
+            <div class="col-md-4"><img src="{{STATIC_URL}}img/e-technik/image3.jpg" alt="" style="width:100%;" /></div>
+          </div>
+          
+          
+          <h3>Referenzen</h3>
+          <ul>
+            <li>Verbund, 2015</li>
+            <li>Wiener Linien, 2019</li>
+          </ul>
+          
+      </div>
+
+    
+    </div>
+    
+    <div class="col-md-3">
+        
+        <p />
+        
+        <p>
+        <img src="{{STATIC_URL}}img/e-technik/martin_haselmaier.jpg" alt="" style="width:100%;" />
+        </p>
+    
+        <blockquote>
+          <p>
+            Beste Technik dort, wo sie Sinn macht.
+          </p>
+          <small>
+          <cite>Martin Haselmaier</cite>
+          </small>
+        </blockquote>
+        
+    </div>
+    
+</div>
+
+
+
+{% endblock content_container %}

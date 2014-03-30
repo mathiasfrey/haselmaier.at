@@ -16,4 +16,12 @@ def wohn_art(request):
     
 def leitstellen(request):
     
-    return render(request, 'haselsite/leitstellen.html')      
+    return render(request, 'haselsite/leitstellen.html')
+    
+def tischlerei(request):
+    
+    return render(request, 'haselsite/tischlerei.html')
+    
+def e_technik(request):
+    
+    return render(request, 'haselsite/e-technik.html')    

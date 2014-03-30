@@ -1,0 +1,167 @@
+{% extends "haselsite/bs3_subsite.html" %}
+
+{% block title %}Tischlerei Haselmaier: Unser Herz schlägt für Holz{% endblock %}
+
+{% block css_at_top %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/tischlerei.css">
+{% endblock %}
+
+
+{% block navigation %}
+    {% include "haselsite/navigation.html" with active="tischlerei" %}
+{% endblock %}
+
+
+{% block jumbotron %}
+<div id="jumbotron">
+
+
+    <div id="logo_wrapper">
+        <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
+            <img src="{{ STATIC_URL }}img/corporatedesign/tischlerei_logo.png" alt="Haselmaier Tischlerei Logo" style="width: 100%" />
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+{% block content_container %}
+
+<div class="row">
+    
+    <div class="col-md-3 hidden-xs hidden-sm" id="contentScrollspy">
+        <ul class="nav nav-tabs nav-stacked affix" id="myAffix"><!-- data-spy="affix"  data-offset-top="160" -->
+            <li class="active"><a class="innerside-nav" href="#angebot">Angebot</a></li>
+            <li><a class="innerside-nav" href="#holz">Holz</a></li>
+            <li><a class="innerside-nav" href="#projekte">Projekte</a></li>
+        </ul>
+    </div>
+    
+    
+    <div class="col-md-6" id="start_affix_contentarea">
+      
+      <div id="angebot" class="affix_contentarea">
+
+
+        <h1>Tischlerei Haselmaier</h1>
+          
+        <h2>Unser Herz schlägt für Holz</h2>
+            
+        <p>
+            Die Tischlerei Haselmaier hat sich von einem traditionellen Betrieb
+            zu einer Design-Werkstatt für hochwertige Möbel und Einrichtungen entwickelt.
+        </p>
+        
+        <p>
+            Aber auch in Zeiten moderner Technik und computerunterstütztem Arbeiten
+            bleibt der Mensch der zentrale Gestalter. Unsere Inspiration schöpfen
+            wir aus dem Material mit dem wir arbeiten: Holz.
+        </p>
+
+
+
+        <div class="hidden-xs">
+            <video width="100%" controls poster="http://c99.at/haselmaier_assets/tischlereifinal.jpg" id="bgvid" >
+                  
+                <!-- Serve video content via streaming server -->
+                <source src="http://c99.at/haselmaier_assets/tischlereifinal.webm" type="video/webm">
+                <source src="http://c99.at/haselmaier_assets/tischlereifinal.mp4" type="video/mp4">
+                <source src="http://c99.at/haselmaier_assets/tischlereifinal.ogg" type="video/ogg">
+            
+            </video>
+        
+
+
+        </div>
+        
+        
+
+      </div>
+
+
+      <div id="holz" class="affix_contentarea">
+        <h2>Jedes Stück Holz ist ein Unikat</h2>
+        <p class="">
+        Holz ist warm, lebendig und ästhetisch. Es ist die Grundlage unserer Arbeit
+        und wir lieben es, damit Räume zum Leben zu erwecken. Gerne lassen wir uns
+        vom Wald und seinen natürlichen Formen inspirieren. Diese Experimentierfreude
+        spiegelt sich in unseren Konzepten wider. 
+
+
+        </p>
+        
+        
+        
+        
+        <p>
+        Vom Baum zum Möbelstück – das ist ein spannender Prozess. Manchmal wählen wir
+        direkt einen Baum für ein Möbelstück aus. Schön, wenn uns unsere Kunden dabei begleiten.             
+          
+        </p>
+      
+      
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/tischlerei/image1.jpg" alt="" width="100%"/>
+          </div>
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/tischlerei/image2.jpg" alt="" width="100%"/>
+          </div>
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/tischlerei/image3.jpg" alt="" width="100%"/>
+          </div>
+        </div>
+        
+        
+      
+      </div>
+
+
+      <div id="projekte" class="affix_contentarea">
+        <h2>Projekte &amp; Referenzen</h2>
+          <p class="">
+          ..
+          </p>
+
+          
+          <img src="{{STATIC_URL}}img/leitstellen/Verbund_01.jpg" style="width:100%" alt="" />
+          
+          
+          <h3>Referenzen</h3>
+          <ul>
+            <li>Verbund, 2015</li>
+            <li>Wiener Linien, 2019</li>
+          </ul>
+          
+      </div>
+
+
+    
+    </div>
+    
+    <div class="col-md-3">
+        <p />
+        <p>
+          <img src="{{STATIC_URL}}img/leitstellen/wolfgang_haselmaier.jpg" alt="" style="width:100%" />
+        </p>
+        
+        <blockquote>
+          <p>
+            Holz ist warm, lebendig und ästhetisch. Es ist die Grundlage unserer Arbeit und wir lieben es.
+          </p>
+          <small>
+          <cite>Wolfgang Haselmaier</cite>
+          </small>
+        </blockquote>
+        
+        
+    </div>
+
+</div>
+
+
+
+{% endblock content_container %}
