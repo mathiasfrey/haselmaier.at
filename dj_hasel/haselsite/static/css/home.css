@@ -127,11 +127,15 @@ a:hover > .subbrand.etechnik {
     margin-top:1em;
     background-color:#7e7574;
 }
+#footer_container_wohnart {
+    margin-top:1em;
+    background-color:rgb(53,62,72);    
+}
 footer {
     font-weight:lighter;
     color:#ccc;
 }
-footer h2 {
+footer h2, h3 {
     font-weight: lighter;
 }
 footer a.footerinfo, footer a.footerinfo:hover, footer a.footerinfo:active, footer a.footerinfo:visited {

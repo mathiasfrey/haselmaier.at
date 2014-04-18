@@ -19,7 +19,16 @@
 
     <div id="logo_wrapper">
         <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
-            <img src="{{ STATIC_URL }}img/corporatedesign/leitstellen_logo.png" alt="Haselmaier Group Logo" style="width: 100%" />
+            
+            
+            <a class="innerside-nav" href="#leitstelle" >
+                <img src="{{ STATIC_URL }}img/corporatedesign/leitstellen_logo.png" alt="Haselmaier Group Logo" style="width: 100%" />
+                <br/>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+            
+            
+            
         </div>
     </div>
 
@@ -90,14 +99,27 @@
         
         <div class="row">
           <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_01.jpg" alt="" width="100%"/>
+            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_01.jpg" alt="" width="100%" class="thumbnail" />
           </div>
           <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_02.jpg" alt="" width="100%"/>
+            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_02.jpg" alt="" width="100%" class="thumbnail"/>
           </div>
           <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_03.jpg" alt="" width="100%"/>
+            <img src="{{STATIC_URL}}img/leitstellen/LeitstandAllmendingenTische_sw1_72dpi.jpg" alt="" width="100%" class="thumbnail"/>
           </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/leitstellen/DSC_7219_sw_72dpi.jpg" alt="" width="100%" class="thumbnail" />
+          </div>
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/leitstellen/DSC_7444_72dpi.jpg" alt="" width="100%" class="thumbnail"/>
+          </div>
+          <div class="col-md-4">
+            <img src="{{STATIC_URL}}img/leitstellen/DSC_7861_a_72dpi.jpg" alt="" width="100%" class="thumbnail"/>
+          </div>
+          
         </div>
         
         
@@ -117,19 +139,101 @@
 
       <div id="projekte" class="affix_contentarea">
         <h2>Projekte &amp; Referenzen</h2>
-          <p class="">
-          ..
-          </p>
 
           
-          <img src="{{STATIC_URL}}img/leitstellen/Verbund_01.jpg" style="width:100%" alt="" />
-          
-          
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+    <!--<div id="logo_wrapper">-->
+    <!--    <div class="col-xs-12 col-md-8 col-lg-6" id="logo">-->
+    <!--        <img src="img/vendor/wohnart_logo.png" alt="Haselmaier Wohn-Art Logo" style="width: 100%" />-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{{ STATIC_URL }}img/leitstellen/Verbund_01.jpg" alt="...">
+      <div class="carousel-caption">
+        Verbund, xxxx
+      </div>
+    </div>
+    <div class="item">
+      <img src="{{ STATIC_URL }}img/leitstellen/DSC_6690_72dpi.jpg" alt="...">
+      <div class="carousel-caption">
+        WU Wirtschaftsuniversität Wien, 2013
+      </div>
+    </div>
+    <div class="item">
+      <img src="{{ STATIC_URL }}img/leitstellen/RK-Graz-2008-17_72dpi.jpg" alt="...">
+      <div class="carousel-caption">
+        RK Graz, &copy 2008
+      </div>
+    </div>
+    <div class="item">
+      <img src="{{ STATIC_URL }}img/leitstellen/P1020333_72dpi.jpg" alt="...">
+      <div class="carousel-caption">
+        xxxx &copy; xxxx
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+
+
+
           <h3>Referenzen</h3>
-          <ul>
-            <li>Verbund, 2015</li>
-            <li>Wiener Linien, 2019</li>
-          </ul>
+          
+          <dl>
+            <dt>2014</dt>
+            <dl>
+                <ul>
+                    <li>xy GmbH, Berlin Deutschland</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </dl>
+            
+            <dt>2013</dt>
+            <dl>
+                <ul>
+                    <li>Verbund, Wien</li>
+                    <li>Salzburg Strom, Salzburg</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </dl>
+
+            <dt>2012</dt>
+            <dl>
+                <ul>
+                    <li>bla</li>
+                    <li>bla</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </dl>
+            
+          </dl>
           
       </div>
 

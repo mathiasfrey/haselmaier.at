@@ -1,20 +1,44 @@
 
-<div class="container" id="footer_container">
+<div class="container"
+     {% if active == "wohn-art" %}
+       id="footer_container_wohnart"
+     {% else %}
+       id="footer_container"
+     {% endif %}>
 <footer>
     <div class="row-fluid" >
         
         <div class="col-md-2">
             <h2>Kontakt</h2>
+            {% if active == "wohn-art" %}
+            <h3>Wohn-Art</h3>
+            {% endif %}
+            
+            
         </div>
         <div class="col-md-5">
             
             <dl class="dl-horizontal" id="contact">
                 
                 <dt>Telefon</dt>
-                <dd><a class="btn btn-default" href="tel:+43 7482 45814">+43 7482 45814</a></dd>
+                <dd>
+                  {% if active == "wohn-art" %}
+                    <a class="btn btn-default" href="tel:+43 7482 4581410">+43 7482 45814 10</a>
+                  {% else %}
+                    <a class="btn btn-default" href="tel:+43 7482 45814">+43 7482 45814</a>
+                  {% endif %}
+                </dd>
                 
                 <dt>Email</dt>
-                <dd>office@haselmaier.at</dd>
+                <dd>
+                
+                  {% if active == "wohn-art" %}
+                    <a href="wohnart@haselmaier.at" class="footerinfo">wohnart@haselmaier.at</a>
+                  {% else %}
+                    <a href="office@haselmaier.at" class="footerinfo">office@haselmaier.at</a>
+                  {% endif %}
+                
+                </dd>
                 
                 <dt>Anschrift</dt>
                 <dd>

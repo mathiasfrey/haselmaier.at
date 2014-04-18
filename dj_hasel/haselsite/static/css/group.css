@@ -97,8 +97,8 @@ html, body {
     width:100%;
     
     position:absolute;
-    top: 30%;
-    bottom: 50%;
+    top: 70%;
+    /*bottom: 15%;*/
     
     z-index:2;
 
@@ -113,9 +113,13 @@ html, body {
     margin-left: auto;
     margin-right: auto;
    
+    text-align:center;                /* arrow down */
+    font-size:4em;                    /* arrow down */
     /*background: rgba(0,0,0,.3);*/
 }
-
+#logo a {                             /* arrow down */
+    color: #eee;                      /* arrow down */
+}
 
 
 /* AFFIX */
