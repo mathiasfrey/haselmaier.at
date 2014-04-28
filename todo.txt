@@ -2,6 +2,7 @@ haselmaier TODO
 ---------------
 
 robots.txt
-favicon / mobile
-google analytics
-video size
+
+use page speed insights by google
+- important: caching headers
+- compress resources 
