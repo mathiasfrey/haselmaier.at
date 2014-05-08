@@ -2,6 +2,8 @@
 <div class="container"
      {% if active == "wohn-art" %}
        id="footer_container_wohnart"
+     {% elif active == "e-technik" %}
+       id="footer_container_etechnik"
      {% else %}
        id="footer_container"
      {% endif %}>
@@ -12,6 +14,8 @@
             <h2>Kontakt</h2>
             {% if active == "wohn-art" %}
             <h3>Wohn-Art</h3>
+            {% elif active == "e-technik" %}
+            <h3>E-Technik</h3>
             {% endif %}
             
             
@@ -24,6 +28,8 @@
                 <dd>
                   {% if active == "wohn-art" %}
                     <a class="btn btn-default" href="tel:+43 7482 4581410">+43 7482 45814 10</a>
+                  {% elif active == "e-technik" %}
+                    <a class="btn btn-default" href="tel:+43 7482 4581451">+43 7482 45814 51</a>
                   {% else %}
                     <a class="btn btn-default" href="tel:+43 7482 45814">+43 7482 45814</a>
                   {% endif %}
@@ -34,6 +40,8 @@
                 
                   {% if active == "wohn-art" %}
                     <a href="mailto:wohnart@haselmaier.at" class="footerinfo">wohnart@haselmaier.at</a>
+                  {% elif active == "e-technik" %}
+                    <a href="mailto:e-technik@haselmaier.at" class="footerinfo">e-technik@haselmaier.at</a>
                   {% else %}
                     <a href="mailto:office@haselmaier.at" class="footerinfo">office@haselmaier.at</a>
                   {% endif %}

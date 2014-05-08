@@ -131,6 +131,10 @@ a:hover > .subbrand.etechnik {
     margin-top:1em;
     background-color:rgb(53,62,72);    
 }
+#footer_container_etechnik {
+    margin-top:1em;
+    background-color:rgb(0,118,189);    
+}
 footer {
     font-weight:lighter;
     color:#ccc;
