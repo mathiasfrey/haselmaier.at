@@ -32,7 +32,7 @@ html, body {
     width: 100%;
     height: auto;
 
-    background: url(http://c99.at/haselmaier_assets/handholz.jpg) no-repeat;
+    background: url(http://assets.haselmaier.at/handholz.jpg) no-repeat;
     background-size: cover;
     
 }
@@ -43,7 +43,7 @@ html, body {
     width: 100%;
     min-height: 400px;
 
-    background: url(http://c99.at/haselmaier_assets/handholz.jpg) no-repeat;
+    background: url(http://assets.haselmaier.at/handholz.jpg) no-repeat;
     background-size: cover;
 }
 
