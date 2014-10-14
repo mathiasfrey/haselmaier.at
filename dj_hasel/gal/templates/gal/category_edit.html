@@ -1,0 +1,23 @@
+{% extends "gal/base.html" %}
+{% load thumbnail i18n bootstrap3 %}
+
+{% block content %}
+<div class="row">
+     
+    <div class="col-md-3">
+    {% include "gal/sidemenu.html" with galleries=galleries category=0 %}
+    </div>
+    
+    <div class="col-md-8">
+    <form class="form" action="{% url 'management-edit-category' gallery=gallery.slug category=object.slug %}">
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% trans "Submit" %}
+        </button>
+    {% endbuttons %}
+    </form>
+    </div>
+    
+</div>
+{% endblock content %}

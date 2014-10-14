@@ -1,0 +1,49 @@
+{% load i18n thumbnail %}
+
+<div class="panel panel-info">
+    
+    <div class="panel-heading">Galleries</div>
+    
+    {% for gallery in galleries %}
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-gal-{{ gallery.id }}">
+            {{ gallery.title }}
+            </a>
+          </h4>
+        </div>
+        <div id="collapse-gal-{{ gallery.id }}" class="panel-collapse collapse {% if category.gallery.pk == gallery.pk %}in{% endif %}">
+          <div class="panel-body" style="padding: 0px;">
+          <ul class="list-group" style="margin-bottom: 0px;">
+          {% for cat in gallery.categories.all %}
+          <a href="{% url 'management-list-category' cat.gallery.slug cat.slug %}"
+           class="list-group-item{% if cat.pk == category.pk %} active{% endif %}">
+           <span class="badge">{{ cat.pictures.count }}</span>
+           {{ cat.title }}
+          </a>
+          
+            {% empty %}
+          <i>No categories</i>
+          {% endfor %}
+          
+          </ul>
+          </div>
+          <div class="panel-footer">
+        <a href="{% url 'management-add-category' gallery=gallery.slug %}" class="btn btn-sm btn-default"
+        data-toggle="modal" data-target="#category-add-modal-{{ gallery.pk }}"
+        ><span class="glyphicon glyphicon-plus"></span>
+        {% trans "Add Category" %}</a>
+        </div>
+        </div>
+      </div>      
+    </div>
+{% endfor %} {# galleries #}
+</div>
+
+{% for gallery in galleries %}
+{% include "gal/modal_external.html" with modal_id="category-add-modal-" modal_id_addon=gallery.pk modal_label="Create Category" %} 
+{% endfor %}
+        
+    

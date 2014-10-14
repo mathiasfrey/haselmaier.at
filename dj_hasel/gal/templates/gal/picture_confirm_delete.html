@@ -1,0 +1,39 @@
+{% extends "gal/base.html" %}
+{% load thumbnail i18n bootstrap3 %}
+
+{% block content %}
+<div class="row">
+     
+    <div class="col-md-3">
+    {% include "gal/sidemenu.html" with galleries=galleries category=category %}
+    </div>
+    
+    <div class="col-md-8">
+    
+    <h1>{% trans "Delete Picture" %}</h1>
+    
+    <h2>{{ object.title }}</h2>
+    <div class="thumbnail-container">
+	<div class="thumbnail">
+	{% thumbnail object.image "170x170" crop="center" as im %}
+	<img data-src="{{ im.url }}" 
+	     src="{{ im.url }}"
+	     alt="{{ object.title }}">
+	{% endthumbnail %}
+	</div>
+	</div>
+    
+    <form class="form" 
+          action="{% url 'management-delete-picture' gallery=gallery.slug category=category.slug pk=object.pk %}"
+          method="POST">
+    {% csrf_token %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% trans "Delete" %}
+        </button>
+    {% endbuttons %}
+    </form>
+    </div>
+    
+</div>
+{% endblock content %}

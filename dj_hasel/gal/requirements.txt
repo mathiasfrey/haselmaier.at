@@ -1,0 +1,5 @@
+sorl-thumbnail
+django-bootstrap3
+
+
+# django 1.7: sorl-thumbnail==11.12.1b

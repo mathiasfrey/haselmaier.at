@@ -1,0 +1,21 @@
+{% extends "gal/base.html" %}
+{% load thumbnail i18n bootstrap3 %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+    {% include "gal/sidemenu.html" with galleries=galleries category=0 %}
+    </div>
+    
+    <div class="col-md-8">
+<form class="form" 
+      action="{% url 'management-add-category' gallery=gallery.slug %}" 
+      method="POST">
+{% csrf_token %}
+{% bootstrap_form form %}
+   <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+   <button type="submit" class="btn btn-primary" >{% trans "Create" %}</button>
+</form>
+    </div>
+</div>
+{% endblock content %}

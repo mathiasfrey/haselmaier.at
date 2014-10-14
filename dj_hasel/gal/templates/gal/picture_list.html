@@ -1,0 +1,97 @@
+{% extends "gal/base.html" %}
+{% load i18n thumbnail %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+    {% include "gal/sidemenu.html" with galleries=galleries category=category %} 
+    </div>
+    <div class="col-md-8">
+    {% if category %}
+    <div class="panel panel-info">
+        <div class="panel-heading">{{ category.title }}
+        <a href="{% url 'management-edit-category' gallery=category.gallery.slug category=category.slug %}" 
+        class="btn btn-sm pull-right btn-default" style="margin-top: -5px" role="button"
+         data-toggle="modal" data-target="#category-edit-modal">
+             <span class="glyphicon glyphicon-cog"></span></a>
+        </div>
+        <a href="{% url 'management-add-picture' gallery=category.gallery.slug category=category.slug %}" class="btn btn-sm btn-primary" title='{% trans "Add Picture" %}'
+        data-toggle="modal" data-target="#picture-add-modal">
+        <span class=" glyphicon glyphicon-open"></span>&nbsp;{% trans "Add Picture" %}
+        </a>
+        
+        <a href="{% url 'preview-category' gallery=category.gallery.slug category=category.slug %}" 
+        class="btn btn-sm btn-default" title='{% trans "Preview" %}'
+        data-toggle="modal" data-target="#category-preview-modal">
+        <span class=" glyphicon glyphicon-eye-open"></span>&nbsp;{% trans "Preview" %}
+        </a>
+        
+        <!-- 
+        <a href="" class="btn btn-sm btn-default" title='{% trans "Download" %}'
+        data-toggle="modal" data-target="#category-download-modal">
+        <span class=" glyphicon glyphicon-save"></span>&nbsp;{% trans "Download" %}
+        </a> -->
+    </div>
+      {% for item in object_list %}
+      
+      <div class="col-md-3 col-xs-6 thumbnail-container">
+      <div class="thumbnail">
+        {% thumbnail item.image "170x170" crop="center" as im %}
+        <img data-src="{{ im.url }}" 
+             src="{{ im.url }}"
+             alt="{{ item.title }}">
+        {% endthumbnail %}
+          <div class="caption">
+            
+            <p>{{ item.title }}</p>
+            
+            <p><span class=" glyphicon glyphicon-picture"></span>&nbsp;<span>{{ item.image.height }}x{{ item.image.width }}</span>
+               <span class="pull-right">{{ item.image.size|filesizeformat }}</span>
+            </p>
+            
+            <p>
+             
+             <!-- 
+             <a href="#" class="btn btn-default" role="button">
+             <span class="glyphicon glyphicon-chevron-left"></span></a> 
+             <a href="#" class="btn btn-default" role="button">
+             <span class="glyphicon glyphicon-chevron-right"></span></a>
+              -->
+              
+             <a href="{% url 'management-edit-picture' gallery=category.gallery.slug category=category.slug pk=item.pk %}" 
+             class="btn btn-primary" role="button"
+             data-toggle="modal" data-target="#picture-edit-modal-{{ item.pk }}">
+             <span class="glyphicon glyphicon-pencil"></span></a>
+             
+             <a href="{% url 'management-delete-picture' gallery=category.gallery.slug category=category.slug pk=item.pk %}" 
+             class="btn btn-warning pull-right" role="button"
+             data-toggle="modal" data-target="#picture-delete-modal-{{item.pk}}">
+             <span class="glyphicon glyphicon-trash"></span></a>
+            </p>
+             
+             
+          </div>
+      </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    Select a Category
+    {% endif %}
+    </div> <!-- end of picture list -->
+
+
+
+
+{% include "gal/modal_external.html" with modal_id="category-preview-modal" modal_label="Preview" %} 
+{% include "gal/modal_external.html" with modal_id="category-edit-modal" modal_label="Edit Category" %} 
+
+{% for item in object_list %}
+{% include "gal/modal_external.html" with modal_id="picture-edit-modal-" modal_id_addon=item.pk modal_label="Edit Image" %} 
+{% include "gal/modal_external.html" with modal_id="picture-delete-modal-" modal_id_addon=item.pk modal_label="Delete Image" %} 
+{% endfor %}
+
+{% include "gal/modal_external.html" with modal_id="picture-add-modal" modal_label="Add Image" %} 
+</div>
+
+
+{% endblock content %}

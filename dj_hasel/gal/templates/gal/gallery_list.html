@@ -1,0 +1,48 @@
+{% extends "gal/base.html" %}
+{% load thumbnail i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+    {% include "gal/sidemenu.html" with galleries=galleries category=0 %}
+    </div>
+    
+    <div class="col-md-8">
+      {% for item in object_list %}
+      
+      <div class="col-md-3 col-xs-6 thumbnail-container">
+      <div class="thumbnail">
+        {% for pic in item.get_front_images|slice:":1" %}
+			{% thumbnail pic.image "170x170" crop="center" as im %}
+			        <img data-src="{{ im.url }}" 
+			             src="{{ im.url }}"
+			             alt="{{ item.title }}">
+			{% endthumbnail %}
+        {% empty %}
+           <img data-src="{{STATIC_URL}}gal/picture_placeholder.png" 
+             src="{{STATIC_URL}}gal/picture_placeholder.png"
+             alt="{{ pic.title }}"
+             width="170px" height="170px">
+        
+        {% endfor %}
+        
+          <div class="caption">
+            
+            <p>{{ item.title }}</p>
+             
+          </div>
+      </div>
+      </div>
+      
+      {% empty %}
+      <i>No Galleries found?</i>
+      {% endfor %}
+         
+    </div> <!-- end of picture list -->
+
+{% include "gal/modals/category_add.html" %}
+
+</div>
+
+
+{% endblock content %}
