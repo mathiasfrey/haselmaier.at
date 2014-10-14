@@ -36,8 +36,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'sorl.thumbnail',
+    'bootstrap3',
+    'gal',
     'haselsite',
+    
 )
 
 MIDDLEWARE_CLASSES = (
