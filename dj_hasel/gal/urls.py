@@ -5,8 +5,11 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth.decorators import login_required, user_passes_test
 from views import CategoryPictureList, GalleryOverview, CategoryEdit, PictureEdit, \
            CategoryCreate, PictureCreate, CategoryList, CategoryDelete, PictureDelete
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import RedirectView
 
-direct = TemplateView.as_view
+
+##direct = TemplateView.as_view
 
 def is_authorized(user):
     # user has to be authenticated
@@ -17,7 +20,9 @@ auth_check = user_passes_test(is_authorized)
 
 urlpatterns = patterns('',
     url(r'^$', 
-        auth_check(GalleryOverview.as_view(template_name='gal/preview/galleries.html')), 
+        auth_check(
+            RedirectView.as_view(url=reverse_lazy('management-list-galleries'))
+                   ), 
         name='browse-galleries'),
     #
     url(r'^view/(?P<gallery>[\w\-]+)/(?P<category>[\w\-]+)/$', 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>{% block head_title %}Management {% if title %}| {{ title }}{% endif %}{% endblock %}</title>
 <!-- Bootstrap -->
-<link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{STATIC_URL}}css/vendor/bootstrap.min.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,15 +35,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-main-navbar-collapse-1">
       <ul class="nav navbar-nav">
+       {% if user.is_authenticated %}
         <li {% if headermenu = "gal" %}class="active"{% endif %}><a href="{% url 'management-list-galleries' %}">Gallery</a></li>
+        
         <li class="dropdown pull-right">
           <a href="#" class="dropdown-toggle pull-right" data-toggle="dropdown">Account <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Admin</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
              <li class="divider"></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
           </ul>
         </li>
+        {% endif %}
       </ul>
     
     </div><!--  /.navbar-collapse -->
@@ -59,9 +62,9 @@
 {% endblock body %}
 {% block offshore %}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{{STATIC_URL}}js/vendor/jquery-1.10.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+<script src="{{STATIC_URL}}js/vendor/bootstrap.min.js"></script>
 {% endblock offshore %}
 </body>
 </html>
