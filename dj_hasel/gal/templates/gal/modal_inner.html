@@ -1,14 +1,20 @@
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-<h4 class="modal-title">{% block modal_title %}{{ modal_title }}{% endblock modal_title %}</h4>
-</div><!-- /modal-header -->
-{% block modal_inner %}
-<div class="modal-body">
-{% block content %}{% endblock content %}
-</div>          <!-- /modal-body -->
-<div class="modal-footer">
-{% block modal_footer %}
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-{% endblock modal_footer %}
-</div> <!-- /modal-footer -->
-{% endblock modal_inner %}
+<div class="modal-dialog">
+<div class="modal-content">
+
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">{% block modal_title %}{{ modal_title }}{% endblock modal_title %}</h4>
+    </div><!-- /modal-header -->
+    {% block modal_inner %}
+    <div class="modal-body">
+    {% block content %}{% endblock content %}
+    </div>          <!-- /modal-body -->
+    <div class="modal-footer">
+    {% block modal_footer %}
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    {% endblock modal_footer %}
+    </div> <!-- /modal-footer -->
+    {% endblock modal_inner %}
+
+</div>
+</div>
