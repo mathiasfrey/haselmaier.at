@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django import template
-from models import Gallery, Category, Picture
+from ..models import Gallery, Category, Picture
 register = template.Library()
 
 @register.assignment_tag

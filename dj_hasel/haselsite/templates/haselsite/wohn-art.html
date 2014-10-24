@@ -1,5 +1,7 @@
 {% extends "haselsite/bs3_subsite.html" %}
 
+{% load gal thumbnail %}
+
 {% block title %}Wohn-Art: Wohnen als Kunst{% endblock %}
 
 {% block css_at_top %}
@@ -181,8 +183,59 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>          
-          
+        
+{% comment %}  
+<h3>TEST</h3>
+{% get_category_pictures  "kuche" as pictures %}  
 
+<div id="carousel-gal-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    {% for item in pictures %}
+    
+    <li data-target="#carousel-gal-generic" data-slide-to="{{ forloop.counter0 }}"{% if not forloop.counter0 %} class="active"{% endif %}></li>
+    {% endfor %}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    
+    {% for item in pictures %}
+    {% thumbnail item.image "900x500" crop="center" as im %}
+            
+    <div class="item{% if not forloop.counter0 %} active{% endif %}">
+      <img src="{{ im.url }}" alt="{{ item.title }}">
+      <div class="carousel-caption">
+         <h3>{{ item.title }}</h3>
+      </div>
+    </div>
+    {% endthumbnail %}
+    {% endfor %}
+    
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-gal-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-gal-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+{% endcomment %}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         <h3>Wohn-Art auf Pinterest</h3>
