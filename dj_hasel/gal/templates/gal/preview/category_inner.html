@@ -8,12 +8,12 @@
 <div class="col-md-1">&nbsp;</div>
     <div class="col-md-10">
     
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-category-{{category.pk}}" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     {% for item in object_list %}
     
-    <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter0 }}"{% if not forloop.counter0 %} class="active"{% endif %}></li>
+    <li data-target="#carousel-category-{{category.pk}}" data-slide-to="{{ forloop.counter0 }}"{% if not forloop.counter0 %} class="active"{% endif %}></li>
     {% endfor %}
   </ol>
 
@@ -21,12 +21,16 @@
   <div class="carousel-inner">
     
     {% for item in object_list %}
-    {% thumbnail item.image "900x500" crop="center" as im %}
-            
+    {% thumbnail item.image "900x500" crop="center" as im %}    
     <div class="item{% if not forloop.counter0 %} active{% endif %}">
       <img src="{{ im.url }}" alt="{{ item.title }}">
       <div class="carousel-caption">
-         <h3>{{ item.title }}</h3>
+      <a href="{{ item.image.url }}" target="_blank">
+         {% if item.title %}<h3>{{ item.title }}</h3>
+         {% else %}
+         <span class="glyphicon glyphicon-zoom-in">&nbsp;</span>
+         {% endif %}
+      </a>
       </div>
     </div>
     {% endthumbnail %}
@@ -35,12 +39,17 @@
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  <a class="left carousel-control" href="#carousel-category-{{category.pk}}" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+  <a class="right carousel-control" href="#carousel-category-{{category.pk}}" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
+  {% comment %}
+  <a class="bottom carousel-control" href="#carousel-category-{{category.pk}}" role="button">
+    <span class="glyphicon glyphicon-zoom"></span>
+  </a>
+  {% endcomment %}
 </div>
 </div>
 {% endblock content %}

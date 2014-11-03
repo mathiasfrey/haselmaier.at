@@ -1,15 +1,15 @@
 {% extends "gal/preview/base.html" %}
-{% load i18n thumbnail bootstrap3 %}
+{% load i18n thumbnail bootstrap3 gal %}
 
 {% block content %}
 <div class="row">
 <div class="col-md-1">&nbsp;</div>
     <div class="col-md-10">
-    
+    {% get_category_pictures category.slug gallery.slug as pictures %}
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    {% for item in object_list %}
+    {% for item in pictures %}
     
     <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter0 }}"{% if not forloop.counter0 %} class="active"{% endif %}></li>
     {% endfor %}
@@ -18,7 +18,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     
-    {% for item in object_list %}
+    {% for item in pictures %}
     {% thumbnail item.image "900x500" crop="center" as im %}
             
     <div class="item{% if not forloop.counter0 %} active{% endif %}">

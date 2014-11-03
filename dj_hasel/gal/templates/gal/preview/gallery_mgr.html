@@ -1,0 +1,16 @@
+{% extends "gal/base.html" %}
+{% load gal i18n thumbnail %}
+{# template to display several categories of a gallery #}
+{# optional argument: gallery, either slug or pk #}
+{# use first picture as main, the others under #}
+
+{% block content %}
+
+<div class="row">
+<div class="col-md-2">&nbsp;</div>
+<div class="col-md-8">
+
+{% include "gal/preview/gallery.html" with gallery='eins' %}
+</div>
+</div>
+{% endblock content %}

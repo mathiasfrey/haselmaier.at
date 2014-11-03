@@ -5,6 +5,24 @@ from ..models import Gallery, Category, Picture
 register = template.Library()
 
 @register.assignment_tag
+def get_gallery(gallery):
+    if isinstance(gallery, basestring):
+        # strings go to slugs
+        try:
+            return Gallery.objects.filter(slug=gallery)[0]
+        except:
+            
+            pass
+    else:
+        try:
+            return Gallery.objects.filter(pk=gallery)[0]
+        except:
+            
+            pass
+    return None
+    
+
+@register.assignment_tag
 def get_category_pictures(category, gallery=None):
     # if gallery is given, we search there.
     if gallery is not None:

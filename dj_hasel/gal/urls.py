@@ -9,7 +9,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import RedirectView
 
 
-##direct = TemplateView.as_view
+direct = TemplateView.as_view
 
 def is_authorized(user):
     # user has to be authenticated
@@ -26,9 +26,11 @@ urlpatterns = patterns('',
         name='browse-galleries'),
     #
     url(r'^view/(?P<gallery>[\w\-]+)/(?P<category>[\w\-]+)/$', 
-        auth_check(CategoryPictureList.as_view(template_name='gal/preview/category.html')), 
+        CategoryPictureList.as_view(template_name='gal/preview/category.html'), 
         name='preview-category'),
-    
+    url(r'^view/(?P<gallery>[\w\-]+)/$',
+        direct(template_name='gal/preview/gallery_mgr.html'),
+        name='preview-gallery'),
     url(r'^mgr/$', auth_check(GalleryOverview.as_view()),  
         name='management-list-galleries'),
     #url(r'^categories/(?P<category>[\w\-]+)/$', CategoryPictureList.as_view(), name='management-list-category'),
@@ -58,5 +60,4 @@ urlpatterns = patterns('',
     url(r'^mgr/(?P<gallery>[\w\-]+)/(?P<category>[\w\-]+)/_delete/(?P<pk>\d+)/$', 
         auth_check(PictureDelete.as_view()), 
         name='management-delete-picture'),
-    
     )
