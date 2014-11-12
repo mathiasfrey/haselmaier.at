@@ -24,4 +24,8 @@ def tischlerei(request):
     
 def e_technik(request):
     
-    return render(request, 'haselsite/e-technik.html')    
+    return render(request, 'haselsite/e-technik.html')
+
+def test(request):
+    
+    return render(request, 'haselsite/test.html')    
