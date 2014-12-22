@@ -15,13 +15,14 @@ import os
 # todo: do this properly.
 
 def file_upload(instance, filename):
+    print settings.MEDIA_ROOT
     cat = 'no-category'
     gal = 'no-gallery'
     if instance.category:
         cat = instance.category.slug
         if instance.category.gallery:
             gal = instance.category.gallery.slug
-    base = os.path.join( 'galleries', 
+    base = os.path.join('galleries', 
                          gal, cat,
                          filename)
     return base
