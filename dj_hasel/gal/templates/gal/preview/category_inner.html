@@ -21,15 +21,16 @@
   <div class="carousel-inner">
     
     {% for item in object_list %}
-    {% thumbnail item.image "900x500" crop="center" as im %}    
+    {% thumbnail item.image "x500" crop="center" as im %}    
     <div class="item{% if not forloop.counter0 %} active{% endif %}">
       <img src="{{ im.url }}" alt="{{ item.title }}">
-      <div class="carousel-caption">
-      <a href="{{ item.image.url }}" target="_blank">
-         {% if item.title %}<h3>{{ item.title }}</h3>
-         {% else %}
-         <span class="glyphicon glyphicon-zoom-in">&nbsp;</span>
+      <div class="carousel-caption"  style="background-color: rgba(255,255,255, 0.5);">
+      <a href="{{ item.image.url }}" target="_blank" style="color: #333; text-decoration: none;">
+         {% if item.title %}
+           <h4>{{ item.title }}</h4>
          {% endif %}
+         <span class="glyphicon glyphicon-zoom-in"></span> vergrößern
+         
       </a>
       </div>
     </div>

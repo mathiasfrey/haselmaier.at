@@ -30,7 +30,7 @@
             {# more images under it #}
             {% for pic in category.pictures.all|slice:"1:3" %}
                 <div class="gallery-additional-image">
-                    {% thumbnail pic.image "320x200" crop="center" as im %}    
+                    {% thumbnail pic.image "x320" crop="center" as im %}    
                       <img src="{{ im.url }}" alt="{{ pic.title }}" width="100%" class="thumbnail">
                     {% endthumbnail %}
                 </div>
@@ -45,7 +45,7 @@
             {# first image to the left #}
             
             {% for header_image in category.pictures.all|slice:":1" %}
-                {% thumbnail header_image.image "230x160" crop="center" as im %}    
+                {% thumbnail header_image.image "x160" crop="center" as im %}    
                   <img src="{{ im.url }}" alt="{{ header_image.title }}" width="100%" class="thumbnail">
                 {% endthumbnail %}
             {% empty %}
