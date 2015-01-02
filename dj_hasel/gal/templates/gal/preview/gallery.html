@@ -7,9 +7,11 @@
     .pix {
         margin: .5em auto;
         background: #000;
--webkit-box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);
--moz-box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);
-box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);   
+        max-width: 100%; /* prevent oversized images on mobile to destroy layout */
+        
+        -webkit-box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);
+        -moz-box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);
+        box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);   
     }
 </style>
     
