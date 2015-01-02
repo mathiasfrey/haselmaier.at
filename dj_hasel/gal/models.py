@@ -48,8 +48,8 @@ class Gallery(models.Model):
 
 class Category(models.Model):
     gallery = models.ForeignKey(Gallery, related_name='categories')
-    title = models.CharField(max_length=250, default='')
-    slug = models.SlugField(blank=True)
+    title = models.CharField(max_length=250, default='', unique=True)
+    slug = models.SlugField(blank=True, unique=True)
     
     order = models.IntegerField(blank=True, default=0)
     
