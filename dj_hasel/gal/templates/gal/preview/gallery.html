@@ -30,13 +30,13 @@ box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);
   
 
         {% for header_image in category.pictures.all|slice:":1" %}
-            
+            <p>
             <a class="btn btn-default" href="{% url 'preview-category' gallery=gallery category=category.slug %}" 
                    class="" title='{% trans "Diese Galerie öffnen" %}'
                    data-toggle="modal" data-target="#category-preview-modal-{{category.pk}}">
                     {{category.pictures.all|length}} Bild{{ category.pictures.all|length|pluralize:"er" }} in Galerie öffnen
             </a>              
-            
+            </p>           
             
             {% thumbnail header_image.image "x320" crop="center" as im %}    
               <img src="{{ im.url }}" title="{{ header_image.title }}" alt="{{ header_image.title }}" class="pix">
