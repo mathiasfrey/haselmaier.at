@@ -3,106 +3,73 @@
 {# optional argument: gallery, either slug or pk #}
 {# use first picture as main, the others under #}
 
+<style type="text/css">
+    .pix {
+        margin: .5em auto;
+        background: #000;
+-webkit-box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);
+-moz-box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);
+box-shadow: 2px 2px 5px 1px rgba(51,51,51,0.5);   
+    }
+</style>
+    
+
 {% get_gallery gallery as gal %}
 {% for category in gal.categories.all %}
 <div class="gallery-category">
     
     
-    
-        
-    <div class="row">
-        
-        <div class="col-md-12">
-            <h3>{{ category.title }}</h3>
-        </div>
-        
-        <div class="col-md-4">
-            
-            
-            
-            {# more images under it #}
-            {% for pic in category.pictures.all|slice:"1:3" %}
-                <div class="gallery-additional-image">
-                    {% thumbnail pic.image "x160" crop="center" as im %}    
-                      <img src="{{ im.url }}" alt="{{ pic.title }}"  class="thumbnail">
-                    {% endthumbnail %}
-                </div>
-            {% empty %}
-            
-            {% endfor %}
-        
-        
-        </div>
-        <div class="col-md-8 gallery-header-image">
 
-            {# first image to the left #}
-            
-            {% for header_image in category.pictures.all|slice:":1" %}
-                {% thumbnail header_image.image "x320" crop="center" as im %}    
-                  <img src="{{ im.url }}" alt="{{ header_image.title }}" class="thumbnail">
-                {% endthumbnail %}
-            {% empty %}
-               <!-- this category has no pictures? -->
-               Keine Bilder in dieser Kategorie gefunden.
-            {% endfor %}            
-            
-        </div>
-    </div>
     
+        
     <div class="row">
-        <div class="col-md-12">
-            <a class="btn btn-primary" href="{% url 'preview-category' gallery=gallery category=category.slug %}" 
+        
+
+        <h3>{{ category.title }}</h3>
+
+  
+
+        {% for header_image in category.pictures.all|slice:":1" %}
+            
+            <a class="btn btn-default" href="{% url 'preview-category' gallery=gallery category=category.slug %}" 
                    class="" title='{% trans "Diese Galerie öffnen" %}'
                    data-toggle="modal" data-target="#category-preview-modal-{{category.pk}}">
-                    {{category.pictures.all|length}} Bild{{ category.pictures.all|length|pluralize:"er" }} ansehen
-            </a>
-        </div>        
+                    {{category.pictures.all|length}} Bild{{ category.pictures.all|length|pluralize:"er" }} in Galerie öffnen
+            </a>              
+            
+            
+            {% thumbnail header_image.image "x320" crop="center" as im %}    
+              <img src="{{ im.url }}" title="{{ header_image.title }}" alt="{{ header_image.title }}" class="pix">
+            {% endthumbnail %}
+        {% empty %}
+           <!-- this category has no pictures? -->
+           Keine Bilder in dieser Kategorie gefunden.
+        {% endfor %}            
         
+        
+        {# more images under it #}
+        {% comment %}
+        slice - only a few images
+        {% for pic in category.pictures.all|slice:"1:3" %}
+        {% endcomment%}
+        {% for pic in category.pictures.all|slice:"1:" %}
+            
+            {% thumbnail pic.image "x160" crop="center" as im %}    
+              <img src="{{ im.url }}" title="{{ pic.title }}" alt="{{ pic.title }}"  class="pix" style="display: inline-block" />
+            {% endthumbnail %}
+            
+        {% empty %}
+        
+        {% endfor %}
+    
+
+
     </div>
+    
 
     
     <hr />
     
-    
-    
-    
-      {% comment %}  
-    <div class="row">
-
-    </div>
-    
-    <div style="height: 100%;" class="col-md-7">
-        <div class="row" style="height: 62px;">
-        <div class="col-xs-12">
-            {# text next to it #}
-            
-        </div>
-        </div>
-        
-        <div class="row" style="height:52px;">
-            {# more images under it #}
-            {% for pic in category.pictures.all|slice:"1:4" %}
-            <div class="col-xs-3 col-md-3 gallery-additional-image">
-                {% thumbnail pic.image "320x200" crop="center" as im %}    
-                  <img src="{{ im.url }}" alt="{{ pic.title }}" width="100%" class="thumbnail">
-                {% endthumbnail %}
-            </div>
-            {% empty %}
-            
-            {% endfor %}
-            <div class="col-xs-1 gallery-more">
-            {% with category.pictures.count|add:-4 as moar %}
-            {% if moar > 0 %}
-                 <a href="">{{ moar }} Mehr...</a>
-            {% else %}
-                  asd
-            {% endif %}
-            {% endwith %}
-            </div>
-        </div>
-    </div>
-    </div>
-{% endcomment %}
     
 </div>
 {% include "gal/modal_external.html" with modal_id="category-preview-modal-" modal_id_addon=category.pk modal_label="Preview" %} 
