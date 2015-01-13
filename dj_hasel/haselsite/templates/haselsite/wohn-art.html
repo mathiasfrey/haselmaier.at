@@ -183,11 +183,13 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>          
-        
+
+{% include "gal/preview/gallery.html" with gallery='wohnart' %}
+
 {% comment %}
 
         <h1>test</h1>
-        {% include "gal/preview/gallery.html" with gallery='wohnart' %}
+        
 
 <h3>TEST</h3>
 {% get_category_pictures  "kuche" as pictures %}  
