@@ -1,0 +1,32 @@
+{% extends "haselsite/blog.html" %}
+
+
+{% load markdownify %}
+
+
+{% block content_container %}
+<div id="blogcontainer" class="blogdetail">
+
+<p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; {{ entry.slug }}</p>
+
+
+<h1>{{ entry.title}}</h1>
+
+{{entry.body|markdownify|safe}}
+
+
+    
+{% for tag in entry.tags.all %}
+        <span class="tag">{{tag.name}}</span>
+    {% endfor %}
+             
+
+</div>
+            
+
+
+
+
+
+</div>
+{% endblock %}
