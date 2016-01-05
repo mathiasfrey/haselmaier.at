@@ -1,6 +1,6 @@
 {% extends "haselsite/bs3_subsite.html" %}
 
-{% load markdownify %}
+
 
 {% block title %}Haselmaier Blog: Wir lieben was wir tun{% endblock %}
 
@@ -23,26 +23,53 @@
 
 
 {% block content_container %}
+    
+    
+    
 <div id="blogcontainer">
-    <h1>Blog</h1>
-    <h2>Wir lieben was wir tun</h2>
+    
+    <p cs="breadcrumbs">Haselmaier Blog </p>
+    
+    <h1>Wir lieben was wir tun</h1>
+    <p>
+        Haselmaier und Partner bloggen über Möbel und Technik für den Menschen. 
+    </p>
 
-    <div class="row">
-        <div class="col-md-4">
-            {{ my_markdown_content|markdownify|safe }}
+    {% comment %}
+    
+    HOWTO 3 column layout:
+      1. change to div class to "col-md-4"
+      2. change both tags to divisibleby:"3"
+      
+    {% endcomment %}
+    
+    {% for entry in entries %}
+    {% if forloop.counter0|divisibleby:"2" or forloop.first %}<div class="row">{% endif %}
+        
+        
+        <div class="col-md-6 has2_entry" style="background-image: url({{entry.title_image.url}});">
+        
+            {%comment%}<img class="image" src="{{entry.image.url}}" alt="Blog image" />{%endcomment%}
+            
+            <div class="textfield textfield_blog">
+                <h3><a href="{% url "blog_detail" entry.slug  %}">{{entry.title}}</a></h3>
+                 
+                {% for tag in entry.tags.all %}
+                    <span class="tag">{{tag.name}}</span>
+                {% endfor %}
+                
+            </div>
+            
+            
+        
         </div>
-        <div class="col-md-4">
-            d
-        </div>
-        <div class="col-md-4">
-            d
-        </div>
-    </div>
+        
+    {% if forloop.counter|divisibleby:"2" or forloop.last %}</div>{%endif%}
+    {% endfor %}
 
 </div>
-
-
 {% endblock content_container %}
+
 
 
 {% block footer%}

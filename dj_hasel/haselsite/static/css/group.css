@@ -179,3 +179,54 @@ ul.nav-tabs.affix{
     margin-bottom:40px;
    /* overflow:hidden;*/  
 }
+
+
+/* blog and new gallery common:
+   has2 => blog + gallery updates
+*/
+.has2_entry {
+	
+	/*margin-bottom: 35px;*/
+	
+	height: 350px;
+	
+	background: #ccc;
+	background-size:cover;
+	
+	
+}
+
+.has2_entry .textfield {
+	padding: .35em;
+	background: rgba(209,0,25,.7);
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	
+	color: #eee;
+}
+
+/* specific colors other than red */
+.has2_entry .textfield_wohnart {
+    background: rgba(53,62,72,.7);
+}
+.has2_entry .textfield_etechnik {
+    background: rgba(0,118,189,.7);
+}
+.has2_entry .textfield_blog {
+    background: rgba(0,90,75,.9);
+}
+
+.has2_entry h3 a, .has2_entry h3 a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+
+.tag {
+	padding: .35em;
+	/*border: 1px solid #ddd;*/
+	background: rgba(2,2,2,.5);
+	border-radius: 3px;
+	
+}

@@ -69,6 +69,9 @@
                 <a href="{% url "wohn_art" %}?from=footer" class="footerinfo">Wohn-Art</a> |
                 <a href="{% url "leitstellen" %}?from=footer" class="footerinfo">Leitstellen</a> |
                 <a href="{% url "e_technik" %}?from=footer" class="footerinfo">E-Technik</a>
+                {% if  BLOG_ACTIVE %} |
+                <a href="{% url "blog" %}?from=footer" class="footerinfo">Blog</a>
+                {% endif %}
             </p>
             <p>
                 <a class="btn btn-default btn-xs"
@@ -79,7 +82,7 @@
             </p>
             <p>
             <a href="#" class="footerinfo" data-toggle="modal" data-target="#modal_imprint">Impressum</a> |
-            &copy; 2014
+            &copy; 2016
             </p>
 
         </div>

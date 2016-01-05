@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     
     url(r'^e-technik/$', 'haselsite.views.e_technik', name='e_technik'),
     url(r'^etechnik/$', RedirectView.as_view(url='/e-technik/', permanent=False)),
+    
+    url(r'^blog/$', 'haselsite.views.blog', name='blog'),
+    url(r'^blog/(?P<slug>[\w-]+)/$', 'haselsite.views.blog_detail', name='blog_detail'),
  
     url(r'^test/$', 'haselsite.views.test', name='test'), 
 )

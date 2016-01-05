@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from django.template import loader
 
-# Create your views here.
+from models import BlogEntry, BlogTag
 
 def home(request):
     
@@ -28,4 +30,27 @@ def e_technik(request):
 
 def test(request):
     
-    return render(request, 'haselsite/test.html')    
+    return render(request, 'haselsite/test.html')
+
+def blog(request):
+    
+    entries = BlogEntry.objects.filter(publish=True)
+    #template = loader.get_template('haselsite/blog.html')
+    context = {
+        'entries': entries,
+    }
+    
+    #return HttpResponse(template.render(context, request))
+    return render(request, 'haselsite/blog.html', context)
+
+def blog_detail(request, slug):
+    
+    entry = get_object_or_404(BlogEntry, slug=slug)
+    
+    template = loader.get_template('haselsite/blog_detail.html')
+    
+    context = {
+        'entry': entry,
+    }
+    
+    return HttpResponse(template.render(context, request))
