@@ -21,47 +21,48 @@ misuse the jumbotron for facebook
 {% block content_container %}
 <div id="blogcontainer" class="blogdetail">
 
-<p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; {{ entry.slug }}</p>
-
-
-<div class="row">
-    <div class="col-md-10">
-        <h1>{{ entry.title}}</h1>
-    </div>
-
-    <div class="col-md-2">
-        
-        <div class="fb-like" data-href="{% url "blog_detail" entry.slug %}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
-        
-    </div>
-</div>
-
-
-
-<div class="row">
-    <div class="col-md-12">
-        
-        {% if entry.renderer == "MD" %}
-        
-            {{entry.body|markdownify|safe}}
-        {% else %}
-            
-            no renderer defined
-            
-        {% endif %}
-
-        <div>
-          {% for tag in entry.tags.all %}
-              <span class="tag">{{tag.name}}</span>
-          {% endfor %}
-        </div>
-  
-    </div>
-</div>
-
-
-
+    <p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; {{ entry.slug }}</p>
     
+    
+    <h1>{{ entry.title}}</h1>
+    <div>
+      {% for tag in entry.tags.all %}
+          <span class="tag">{{tag.name}}</span>
+      {% endfor %}
+    </div>
+            
+    
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+            
+            {% if entry.renderer == "MD" %}
+            
+                {{entry.body|markdownify|safe}}
+            {% else %}
+                
+                {{entry.body|safe}}
+                
+            {% endif %}
+      
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{entry.author.image.url}}" alt="Autor Bild" />
+            <p>{{entry.author.name}}, {{ entry.author.job_title}}</p>
+        </div>
+    
+        <div class="col-md-4">
+            
+            <div class="fb-like" data-href="{% url "blog_detail" entry.slug %}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            
+        </div>
+    </div>    
 
     
   
