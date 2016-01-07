@@ -1,0 +1,38 @@
+{% extends "haselsite/bs3_subsite.html" %}
+
+
+
+{% block title %}Haselmaier Blog: Wir lieben was wir tun{% endblock %}
+
+{% block css_at_top %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css">
+{% endblock %}
+
+
+{% block navigation %}
+    {% include "haselsite/navigation.html" with active="blog" %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block content_container %}
+    
+    
+    lists
+
+{% endblock content_container %}
+
+
+
+
+{% block footer%}
+  {% include "haselsite/footer.html" with active="blog" %}
+
+{% endblock %}

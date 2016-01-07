@@ -1,0 +1,33 @@
+{% extends "haselsite/blog_lists.html" %}
+
+
+
+{% block content_container %}
+<div id="blogcontainer" class="blogdetail">
+
+    <p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; Schlagwörter</p>
+    
+    
+    <div>
+        <h1>{{ tag.name}} <small>{{entries.count}} Blogbeitr{{ entries.count|pluralize:"ag,äge" }}</small></h1> 
+        
+    </div>
+            
+    
+    
+    
+    {% include "haselsite/blog_sub_blogitem.html" with entries=entries %}
+
+   
+  
+
+
+</div>
+            
+
+
+
+
+
+</div>
+{% endblock %}

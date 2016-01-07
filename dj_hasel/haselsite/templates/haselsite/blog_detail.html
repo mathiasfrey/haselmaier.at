@@ -23,12 +23,12 @@ misuse the jumbotron for facebook
 
     <p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; {{ entry.slug }}</p>
     
-    
-    <h1>{{ entry.title}}</h1>
-    <div>
-      {% for tag in entry.tags.all %}
-          <span class="tag">{{tag.name}}</span>
-      {% endfor %}
+    <div class="header">
+        <h1>{{ entry.title}} <small>{{entry.created|date:"F Y"}}</small></h1> 
+        
+        {% for tag in entry.tags.all %}
+            <span class="tag"><a href="{% url "blog_tag" tag.name|lower %}">{{tag.name}}</a></span>
+        {% endfor %}
     </div>
             
     
@@ -49,15 +49,15 @@ misuse the jumbotron for facebook
         </div>
     </div>
 
-    <hr />
+ 
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <img src="{{entry.author.image.url}}" alt="Autor Bild" />
             <p>{{entry.author.name}}, {{ entry.author.job_title}}</p>
         </div>
     
-        <div class="col-md-4">
+        <div class="col-md-6">
             
             <div class="fb-like" data-href="{% url "blog_detail" entry.slug %}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
             

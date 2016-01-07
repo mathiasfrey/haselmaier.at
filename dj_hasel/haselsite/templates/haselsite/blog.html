@@ -35,40 +35,48 @@
         Haselmaier und Partner bloggen über Möbel und Technik für den Menschen. 
     </p>
 
-    {% comment %}
+
     
-    HOWTO 3 column layout:
-      1. change to div class to "col-md-4"
-      2. change both tags to divisibleby:"3"
-      
-    {% endcomment %}
+    {% include "haselsite/blog_sub_blogitem.html" with entries=entries %}
     
-    {% for entry in entries %}
-    {% if forloop.counter0|divisibleby:"2" or forloop.first %}<div class="row">{% endif %}
-        
-        
-        <div class="col-md-6 has2_entry" style="background-image: url({{entry.title_image.url}});">
-        
-            {%comment%}<img class="image" src="{{entry.image.url}}" alt="Blog image" />{%endcomment%}
-            
-            <div class="textfield textfield_blog">
-                <h3><a href="{% url "blog_detail" entry.slug  %}">{{entry.title}}</a></h3>
-                 
-                {% for tag in entry.tags.all %}
-                    <span class="tag">{{tag.name}}</span>
-                {% endfor %}
-                
-            </div>
-            
-            
-        
-        </div>
-        
-    {% if forloop.counter|divisibleby:"2" or forloop.last %}</div>{%endif%}
-    {% endfor %}
+
 
 </div>
+
+
+
+<h4>Zeige Artikel nach ...</h4>
+<div class="row">
+    <div class="col-md-4">
+        <h4>Unternehmensbereichen</h4>
+        <ul>
+        {% for brand in brands%}
+            <li><a href="{% url "blog_brand" brand.url %}">{{brand.name}}</a> ({{brand.count}})</li>
+        {%endfor%}
+        </ul>
+       
+    </div>    
+    <div class="col-md-4">
+        <h4>Schlagworten</h4>
+        <ul>
+        {% for tag in tags%}
+            <li><a href="{% url "blog_tag" tag|lower %}">{{tag}}</a> ({{tag.blogentry__count}})</li>
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h4>Autoren</h4>
+        <ul>
+        {% for author in authors %}
+            <li><a href="{% url "blog_author" author.id %}">{{author}}</a> ({{author.blogentry__count}})</li>
+        {%endfor%}
+        </ul>
+    </div> 
+</div>
+
+
 {% endblock content_container %}
+
 
 
 

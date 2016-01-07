@@ -18,6 +18,11 @@ urlpatterns = patterns('',
     url(r'^etechnik/$', RedirectView.as_view(url='/e-technik/', permanent=False)),
     
     url(r'^blog/$', 'haselsite.views.blog', name='blog'),
+    
+    url(r'^blog/autor/(?P<id>[\d]+)/$', 'haselsite.views.blog_author', name='blog_author'),
+    url(r'^blog/schlagwort/(?P<tag>[\w-]+)/$', 'haselsite.views.blog_tag', name='blog_tag'),
+    url(r'^blog/organisation/(?P<brand>[\w-]+)/$', 'haselsite.views.blog_brand', name='blog_brand'),
+    
     url(r'^blog/(?P<slug>[\w-]+)/$', 'haselsite.views.blog_detail', name='blog_detail'),
  
     url(r'^test/$', 'haselsite.views.test', name='test'), 

@@ -220,12 +220,15 @@ ul.nav-tabs.affix{
 
 .has2_entry h3 a, .has2_entry h3 a:hover {
 	color: #eee;
-	text-decoration: none;
+	/*text-decoration: none;*/
+}
+.has2_entry h3 a:hover {
+	text-decoration: underline;
 }
 
-.tag {
+.tag a  {
 	padding: .35em;
-	/*border: 1px solid #ddd;*/
+	color: #ddd;
 	background: rgba(2,2,2,.5);
 	border-radius: 3px;
 	
