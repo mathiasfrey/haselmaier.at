@@ -55,19 +55,20 @@ ul li a, ul li a:hover {
 
 
 /* detail blog page */
-.blogdetail p {
-	color:#444;
-	font-family: "medium-content-serif-font",Georgia,Cambria,"Times New Roman",Times,serif;
-	font-weight: 400;
-    font-style: normal;
-    font-size: 21px;
-    line-height: 1.58;
-    letter-spacing: -0.003em;
-}
 .blogdetail img {
 	max-width: 100%;
 	
 }
 .blogdetail em {
 	color: #999;
+}
+
+.blog_text p {
+color:#444;
+	font-family: "medium-content-serif-font",Georgia,Cambria,"Times New Roman",Times,serif;
+	font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -0.003em;	
 }

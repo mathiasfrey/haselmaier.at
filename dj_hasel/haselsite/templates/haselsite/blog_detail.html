@@ -19,9 +19,11 @@ misuse the jumbotron for facebook
     
 
 {% block content_container %}
+
 <div id="blogcontainer" class="blogdetail">
 
-    <p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; {{ entry.slug }}</p>
+<p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; {{ entry.slug }}</p>
+        
     
     <div class="header">
         <h1>{{ entry.title}} <small>{{entry.created|date:"F Y"}}</small></h1> 
@@ -35,7 +37,7 @@ misuse the jumbotron for facebook
     
     
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 blog_text">
             
             {% if entry.renderer == "MD" %}
             
@@ -54,7 +56,9 @@ misuse the jumbotron for facebook
     <div class="row">
         <div class="col-md-6">
             <img src="{{entry.author.image.url}}" alt="Autor Bild" />
-            <p>{{entry.author.name}}, {{ entry.author.job_title}}</p>
+            <p>
+                <em>{{entry.author.name}}, {{ entry.author.job_title}}</em>
+            </p>
         </div>
     
         <div class="col-md-6">
