@@ -193,6 +193,8 @@ ul.nav-tabs.affix{
 	background: #ccc;
 	background-size:cover;
 	
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
 	
 }
 
