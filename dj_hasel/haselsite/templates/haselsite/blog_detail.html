@@ -56,10 +56,8 @@ misuse the jumbotron for facebook
 
     <div class="row">
         <div class="col-md-6">
-            <img src="{{entry.author.image.url}}" alt="Autor Bild" />
-            <p>
-                <em>{{entry.author.name}}, {{ entry.author.job_title}}</em>
-            </p>
+            {% include "haselsite/blog_author_author.html" with author=entry.author %}
+
         </div>
     
         <div class="col-md-6">

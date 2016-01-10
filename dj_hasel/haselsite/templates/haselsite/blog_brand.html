@@ -9,7 +9,46 @@
     
     
     <div>
-        <h1>{{ brand.name|capfirst}} <small>{{entries.count}} Blogbeitr{{ entries.count|pluralize:"ag,äge" }}</small></h1> 
+        <h1>{{ brand.name|capfirst}} <small>{{entries.count}} Blogbeitr{{ entries.count|pluralize:"ag,äge" }}</small></h1>
+        
+        {%comment%}
+        GROUP = 'GR'
+        TISCHLEREI = 'TI'
+        WOHNART = 'WA'
+        LEITSTELLEN = 'LS'
+        ETECHNIK = 'ET'
+        BLOG = 'BL'
+        PG8 = 'P8'
+        {%endcomment%}
+    
+        <p >
+            {% if brand.key == "GR" %}
+            <a href="{% url "group" %}">Haselmaier Group</a>
+            {% endif %}
+        
+            {% if brand.key == "TI" %}
+                <a href="{% url "tischlerei" %}">Tischlerei</a>
+            {% endif %}
+            {% if brand.key == "WA"%}
+                <a href="{% url "wohn_art" %}">Wohn-Art</a>
+            {% endif %}
+            {% if brand.key == "LS"%}
+                <a href="{% url "leitstellen" %}">Leitstellen</a>
+            {% endif %}
+        
+            {% if brand.key == "ET"%}
+                <a href="{% url "e_technik" %}">E-Technik</a>
+            {% endif %}
+        
+            {% if brand.key == "BL"%}
+                <a href="{% url "blog" %}">Haselmaier Blog</a>
+            {% endif %}
+            
+            {% if brand.key == "P8"%}
+            
+                Haselmaiers Innovation Space Vienna: <a href="http://www.pg8.at">pg8</a>
+            {% endif %}
+        </p>
         
     </div>
             
