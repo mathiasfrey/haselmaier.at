@@ -49,13 +49,16 @@ html, body {
 
 
 #blog_wrapper {
-    width: 90%;
+    width: 95%;
     
     position: absolute;
-    top:60%;
-    bottom:30%;
+    top:1%;
+    bottom:80%;
     
     z-index: 3;
+}
+#blog_wrapper p {
+    color: #eee;
 }
 
 
@@ -71,7 +74,7 @@ html, body {
     width:100%;
     
     position:absolute;
-    top: 20%;
+    top: 30%;
     bottom: 50%;
     
     z-index:2;
