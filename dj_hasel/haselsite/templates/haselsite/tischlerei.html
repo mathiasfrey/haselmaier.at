@@ -169,6 +169,12 @@
           <cite>Wolfgang Haselmaier</cite>
           </small>
         </blockquote>
+
+
+        {% block blogs %}
+            {% include "haselsite/sub_blogs.html" with entries=blogs %}
+        {% endblock %}
+        
         
         
     </div>

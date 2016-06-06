@@ -11,23 +11,53 @@ def home(request):
     
 def group(request):
     
-    return render(request, 'haselsite/group.html')
+    blogs = BlogEntry.objects.filter(publish=True, brand='GR').order_by('-publish')
+    
+    context = {
+        'blogs': blogs,
+    }
+    
+    return render(request, 'haselsite/group.html', context)
     
 def wohn_art(request):
+
+    blogs = BlogEntry.objects.filter(publish=True, brand='WA').order_by('-publish')
     
-    return render(request, 'haselsite/wohn-art.html')
+    context = {
+        'blogs': blogs,
+    }
+    
+    return render(request, 'haselsite/wohn-art.html', context)
     
 def leitstellen(request):
+
+    blogs = BlogEntry.objects.filter(publish=True, brand='LS').order_by('-publish')
     
-    return render(request, 'haselsite/leitstellen.html')
+    context = {
+        'blogs': blogs,
+    }
+    
+    return render(request, 'haselsite/leitstellen.html', context)
     
 def tischlerei(request):
+
+    blogs = BlogEntry.objects.filter(publish=True, brand='TI').order_by('-publish')
     
-    return render(request, 'haselsite/tischlerei.html')
+    context = {
+        'blogs': blogs,
+    }
+    
+    return render(request, 'haselsite/tischlerei.html', context)
     
 def e_technik(request):
+
+    blogs = BlogEntry.objects.filter(publish=True, brand='ET').order_by('-publish')
     
-    return render(request, 'haselsite/e-technik.html')
+    context = {
+        'blogs': blogs,
+    }
+    
+    return render(request, 'haselsite/e-technik.html', context)
 
 def test(request):
     

@@ -235,3 +235,13 @@ ul.nav-tabs.affix{
 	border-radius: 3px;
 	
 }
+
+.sites_blog_list ul {
+    padding:0;
+}
+.sites_blog_list li {
+    margin-top: 10px;
+    padding-left: 10px;
+    list-style: none;
+    border-left: 5px solid #008A73;
+}
