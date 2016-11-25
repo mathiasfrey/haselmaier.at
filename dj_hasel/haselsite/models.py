@@ -1,6 +1,6 @@
 from django.db import models
 
-from django.utils.encoding import python_2_unicode_compatible
+#from django.utils.encoding import python_2_unicode_compatible
 
 class BlogAuthor(models.Model):
     
@@ -12,7 +12,7 @@ class BlogAuthor(models.Model):
         return self.name
     
 
-@python_2_unicode_compatible 
+#@python_2_unicode_compatible 
 class BlogEntry(models.Model):
     
     GROUP = 'GR'
@@ -66,8 +66,10 @@ class BlogEntry(models.Model):
     author = models.ForeignKey(BlogAuthor)
     
 
+    def __unicode__(self):
+        return u'%s' % self.title
     def __str__(self):
-        return self.title
+        return u'%s' % self.title
     class Meta:
         verbose_name = "Blog Entry"
         verbose_name_plural = "Blog Entries"
