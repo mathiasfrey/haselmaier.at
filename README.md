@@ -11,6 +11,13 @@
 
 ## Deployment
 
+### Deploy git changes
+
+    [hasel@cow] pwd
+    /home/hasel/haselmaier.at
+    [hasel@cow] git pull
+    [hasel@cow] python dj_hasel/manage.py collectstatic
+
 ### Restart
 
     sudo su -
