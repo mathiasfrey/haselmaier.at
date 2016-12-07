@@ -16,12 +16,16 @@
     [hasel@cow] pwd
     /home/hasel/haselmaier.at
     [hasel@cow] git pull
-    [hasel@cow] python dj_hasel/manage.py collectstatic
+    [hasel@cow] python dj_hasel/manage.py collectstatic # for image or css changes
 
-### Restart
+### Restart django changes
 
     sudo su -
     touch /etc/uwsgi/apps-enabled/hasel.ini
+
+### Restart with new settings
+
+    root@cow:~# /etc/init.d/uwsgi stop && /etc/init.d/uwsgi start
 
 ### Logging
 
