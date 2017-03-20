@@ -12,18 +12,24 @@
         
         <div class="col-md-2">
             <h2>Kontakt</h2>
+            
             {% if active == "wohn-art" %}
             <h3>Wohn-Art</h3>
             {% elif active == "e-technik" %}
             <h3>E-Technik</h3>
             {% endif %}
             
+            <p>
+              Jetzt neu: Beratungsstandort in Wien!
+            </p>
+            
             
         </div>
         <div class="col-md-5">
             
             <dl class="dl-horizontal" id="contact">
-                
+                <dt>Stammsitz Scheibbs</dt>
+                <dd></dd>
                 <dt>Telefon</dt>
                 <dd>
                   {% if active == "wohn-art" %}
@@ -58,6 +64,17 @@
                   
                 </dd>
                 
+                <dt>Beratung Wien</dt>
+                <dd>
+                  <p class="adr">
+                        <span class="street-address">Paulanergasse 8</span><br>
+                        <span class="postal-code">A-1040</span>,
+                        <span class="locality">Wien</span><br>
+                        <a href="http://pg8.at/" class="footerinfo">pg8.at</a><br/>
+                        (Nach Terminvereinbarung)
+                  </p>
+                  
+                </dd>
             </dl>
             
         </div>
@@ -68,7 +85,7 @@
                 <a href="{% url "tischlerei" %}?from=footer" class="footerinfo"> Tischlerei</a> |
                 <a href="{% url "wohn_art" %}?from=footer" class="footerinfo">Wohn-Art</a> |
                 <a href="{% url "leitstellen" %}?from=footer" class="footerinfo">Leitstellen</a> |
-                <a href="{% url "e_technik" %}?from=footer" class="footerinfo">E-Technik</a>
+                <a href="{% url "e_technik" %}?from=footer" class="footerinfo">E-Technik</a>                
                 {% if  BLOG_ACTIVE %} |
                 <a href="{% url "blog" %}?from=footer" class="footerinfo">Blog</a>
                 {% endif %}
@@ -82,7 +99,7 @@
             </p>
             <p>
             <a href="#" class="footerinfo" data-toggle="modal" data-target="#modal_imprint">Impressum</a> |
-            &copy; 2016
+            &copy; 2017
             </p>
 
         </div>
