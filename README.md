@@ -13,6 +13,7 @@
 
 ### Deploy git changes
 
+    source env/bin/activate
     [hasel@cow] pwd
     /home/hasel/haselmaier.at
     [hasel@cow] git pull
