@@ -1,0 +1,82 @@
+{% extends "haselsite/blog.html" %}
+
+
+{% load markdownify %}
+
+{% block jumbotron %}
+{% comment %}
+misuse the jumbotron for facebook
+{% endcomment %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endblock%}
+    
+{% block title %}{{entry.title}} | Haselmaier Blog{% endblock %}
+
+{% block content_container %}
+
+<div id="blogcontainer" class="blogdetail">
+
+<p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; {{ entry.slug }}</p>
+        
+    
+    <div class="header">
+        <h1>{{ entry.title}} <small>{{entry.created|date:"F Y"}}</small></h1> 
+        
+        {% for tag in entry.tags.all %}
+            <span class="tag"><a href="{% url "blog_tag" tag.name|lower %}">{{tag.name}}</a></span>
+        {% endfor %}
+    </div>
+            
+    
+    
+    
+    <div class="row">
+        <div class="col-md-12 blog_text">
+            
+            {% if entry.renderer == "MD" %}
+            
+                {{entry.body|markdownify|safe}}
+            {% else %}
+                
+                {{entry.body|safe}}
+                
+            {% endif %}
+      
+        </div>
+    </div>
+
+ 
+
+    <div class="row">
+        <div class="col-md-6">
+            {% include "haselsite/blog_author_author.html" with author=entry.author %}
+
+        </div>
+    
+        <div class="col-md-6">
+            
+            <div class="fb-like" data-href="{% url "blog_detail" entry.slug %}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            
+        </div>
+    </div>    
+
+    
+  
+
+
+</div>
+            
+
+
+
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+sorl-thumbnail
+django-bootstrap3
+pillow
+
+#sudo apt-get install libjpeg-dev
+
+# django 1.7: sorl-thumbnail==11.12.1b

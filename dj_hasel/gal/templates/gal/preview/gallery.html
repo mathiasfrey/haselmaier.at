@@ -1,0 +1,49 @@
+{% load gal i18n thumbnail %}
+{# template to display several categories of a gallery #}
+{# optional argument: gallery, either slug or pk #}
+{# use first picture as main, the others under #}
+
+<style type="text/css">
+
+
+</style>
+    
+
+{% get_gallery gallery as gal %}
+{% for category in gal.categories.all %}
+
+
+<div class="gallery-category" >
+    
+    
+        
+    <div class="row">
+       <div class="col-xs-12" >
+
+        {% for header_image in category.pictures.all|slice:":1" %}
+        
+        {% comment%}
+        position: relative -> prevents textfield from a horizontal overflow
+        {% endcomment%}
+        <div class="has2_entry" style="background-image: url('{{header_image.image.url}}'); position: relative;">
+            
+            <div class="textfield textfield_wohnart">
+                
+            <h3><a class="" href="{% url 'preview-category' gallery=gallery category=category.slug %}"
+                  data-toggle="modal" data-target="#category-preview-modal-{{category.pk}}">{{ category.title }}</a></h3>
+            
+            <span class="tag">{{category.pictures.all|length}} Bild{{ category.pictures.all|length|pluralize:"er" }}</span>
+            
+            </div>           
+        </div>
+        {% endfor %}            
+        
+    
+
+      </div>  
+    </div>
+    
+
+</div>
+{% include "gal/modal_external.html" with modal_id="category-preview-modal-" modal_id_addon=category.pk modal_label="Preview" %} 
+{% endfor %}

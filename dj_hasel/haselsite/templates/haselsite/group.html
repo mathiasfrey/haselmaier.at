@@ -1,6 +1,6 @@
 {% extends "haselsite/bs3_subsite.html" %}
 
-{% block title %}Haselmaier Group: Tischlerei, Einrichtungskonzepte, Leitstellen und Elektrotechnik{% endblock %}
+{% block title %}Haselmaier Group: Leitstellen, Einrichtungskonzepte, Tischlerei, Elektrotechnik{% endblock %}
 
 {% block css_at_top %}
 <link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
@@ -181,6 +181,16 @@
           <cite>Wolfgang Haselmaier</cite>
           </small>
         </blockquote>
+
+
+        {% block katalog %}
+            {% include "haselsite/katalog.html" with logo="group_logo.png" link="https://www.yumpu.com/de/embed/view/Ke4k0ysE0YYK5TOz" %}
+        {% endblock %}
+        
+        
+        {% block blogs %}
+            {% include "haselsite/sub_blogs.html" with entries=blogs %}
+        {% endblock %}  
         
     </div>
     

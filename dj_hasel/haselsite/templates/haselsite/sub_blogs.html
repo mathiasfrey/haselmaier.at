@@ -1,0 +1,13 @@
+{% if entries %}
+<div class="sites_blog_list">
+  <h3>Blogartikel online</h3>
+  
+  <ul>
+    {% for entry in entries %}
+    
+    <li><a href="{% url "blog_detail" entry.slug  %}">{{ entry.title }}</a></li>
+    
+    {% endfor %}
+  </ul>
+</div>  
+{% endif %}

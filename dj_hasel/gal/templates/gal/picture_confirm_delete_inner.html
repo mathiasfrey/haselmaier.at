@@ -1,0 +1,32 @@
+{% extends "gal/modal_inner.html" %}
+{% load i18n bootstrap3 thumbnail %}
+{# optional parameter: form #}
+
+{% block modal_title %}{% trans "Delete Picture" %}{% endblock %}
+
+{% block modal_inner %}
+<form class="form" 
+          action="{% url 'management-delete-picture' gallery=gallery.slug category=category.slug pk=object.pk %}"
+          method="POST">
+    {% csrf_token %}
+
+<div class="modal-body">
+    <h2>{{ object.title }}</h2>
+    <div class="thumbnail-container">
+    <div class="thumbnail">
+    {% thumbnail object.image "170x170" crop="center" as im %}
+    <img data-src="{{ im.url }}" 
+         src="{{ im.url }}"
+         alt="{{ object.title }}">
+    {% endthumbnail %}
+    </div>
+    </div>
+</div>          <!-- /modal-body -->
+
+<div class="modal-footer">
+   <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+   <button type="submit" class="btn btn-primary">{% trans "Delete" %}</button>
+</div> <!-- /modal-footer -->
+</form>
+{% endblock modal_inner %}
+

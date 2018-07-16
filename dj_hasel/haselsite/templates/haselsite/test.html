@@ -1,0 +1,102 @@
+{% extends "haselsite/bs3_subsite.html" %}
+
+{% load gal thumbnail %}
+
+{% block title %}Wohn-Art: Wohnen als Kunst{% endblock %}
+
+{% block css_at_top %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/wohn-art.css">
+{% endblock %}
+
+
+{% block navigation %}
+    {% include "haselsite/navigation.html" with active="wohn-art" %}
+{% endblock %}
+
+
+
+{% block jumbotron %}
+<div id="jumbotron">
+
+
+    <div id="logo_wrapper">
+        <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
+            
+            <h1>TEST!</h1>
+            <a class="innerside-nav" href="#test" >
+                <img src="{{ STATIC_URL }}img/corporatedesign/wohn-art_logo.png" alt="Haselmaier Wohn-Art Logo" style="width: 100%" />
+                <br/>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+            
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+
+
+{% block content_container %}
+
+<div class="row">
+    
+    <div class="col-md-3 hidden-xs hidden-sm" id="contentScrollspy">
+        <ul class="nav nav-tabs nav-stacked affix" id="myAffix"><!-- data-spy="affix"  data-offset-top="160" -->
+            <li class="active"><a class="innerside-nav" href="#test">Test</a></li>
+        </ul>
+    </div>
+    
+    
+    <div class="col-md-6" id="start_affix_contentarea">
+      
+      <div id="test" class="affix_contentarea">
+        <h1>Test</h1>
+      
+        <h2>bla</h2>
+        <p class="">
+            bla bla bla
+        </p>
+        
+
+{% include "gal/preview/gallery.html" with gallery='wohn-art' %}
+ 
+    
+
+      </div>
+
+    
+    </div>
+    
+    <div class="col-md-3">
+        <p />
+    
+        <p>
+        <img src="{{STATIC_URL}}img/wohn-art/andreas_kiefl.jpg" alt="" style="width:100%;" />
+        </p>
+    
+        <blockquote>
+          <p>
+            Ideen zu lebenswerten Räume machen!
+          </p>
+          <small>
+          <cite>Andreas Kiefl</cite>
+          </small>
+        </blockquote>
+        
+    </div>
+
+</div>
+
+
+
+{% endblock content_container %}
+
+
+{% block footer%}
+  {% include "haselsite/footer.html" with active="wohn-art" %}
+
+{% endblock %}

@@ -48,6 +48,19 @@ html, body {
 }
 
 
+#blog_wrapper {
+    width: 95%;
+    
+    position: absolute;
+    top:1%;
+    bottom:80%;
+    
+    z-index: 3;
+}
+#blog_wrapper p {
+    color: #eee;
+}
+
 
 
 
@@ -85,9 +98,9 @@ html, body {
     padding:10px;
     background: rgb(177,179,180);
     
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;    
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;    
 }
 .subbrand h1 {
     margin-top: 12px; /* reduce vertical offset*/
@@ -116,7 +129,9 @@ a:hover > .subbrand.etechnik {
     background: rgb(0,118,189);
 }
 
-
+.subbrand.blog {
+    background: rgba(0,90,75,.9);
+}
 
 
 

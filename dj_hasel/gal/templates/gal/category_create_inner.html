@@ -1,0 +1,20 @@
+{% extends "gal/modal_inner.html" %}
+{% load i18n bootstrap3 %}
+{# optional parameter: form #}
+
+{% block modal_title %}{% trans "Upload Images" %}{% endblock %}
+
+{% block modal_inner %}
+<form class="form" 
+    action="{% url 'management-add-category' gallery=gallery.slug %}" 
+    method="POST">
+{% csrf_token %}
+<div class="modal-body">
+{% bootstrap_form form %}
+</div>          <!-- /modal-body -->
+<div class="modal-footer">
+   <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+   <button type="submit" class="btn btn-primary">{% trans "Create" %}</button>
+</div> <!-- /modal-footer -->
+</form>
+{% endblock modal_inner %}

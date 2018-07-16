@@ -17,6 +17,9 @@
         <li {% if active = "wohn-art" %}class="active"{%endif%}><a href="{% url "wohn_art" %}">Wohn-Art</a></li>
         <li {% if active = "leitstellen" %}class="active"{%endif%}><a href="{% url "leitstellen" %}">Leitstellen</a></li>
         <li {% if active = "e-technik" %}class="active"{%endif%}><a href="{% url "e_technik" %}">E-Technik</a></li>
+        {% if  BLOG_ACTIVE %}
+        <li {% if active = "blog" %}class="active"{%endif%}><a href="{% url "blog" %}">Stories</a></li>
+        {% endif %}
       </ul>
     </div><!--/.nav-collapse -->
   </div>

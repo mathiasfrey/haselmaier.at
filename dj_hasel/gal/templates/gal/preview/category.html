@@ -1,0 +1,49 @@
+{% extends "gal/preview/base.html" %}
+{% load i18n thumbnail bootstrap3 gal %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">
+    {% get_category_pictures category.slug gallery.slug as pictures %}
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    {% for item in pictures %}
+    
+    <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter0 }}"{% if not forloop.counter0 %} class="active"{% endif %}></li>
+    {% endfor %}
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    
+    {% for item in pictures %}
+    {% thumbnail item.image "900x500" crop="center" as im %}
+            
+    <div class="item{% if not forloop.counter0 %} active{% endif %}">
+      <img src="{{ im.url }}" alt="{{ item.title }}">
+      <div class="carousel-caption">
+         <h3>{{ item.title }}</h3>
+      </div>
+    </div>
+    {% endthumbnail %}
+    {% endfor %}
+    
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+    
+    
+      Lorem Ipsum
+      
+    
+</div>
+{% endblock content %}

@@ -24,6 +24,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+THUMBNAIL_DEBUG = True
+
 ALLOWED_HOSTS = []
 
 
@@ -36,8 +38,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'sorl.thumbnail',
+    'bootstrap3',
+    'gal',
     'haselsite',
+    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,6 +58,26 @@ ROOT_URLCONF = 'dj_hasel.urls'
 
 WSGI_APPLICATION = 'dj_hasel.wsgi.application'
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors':
+                [
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.debug",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.template.context_processors.tz",
+                "django.contrib.messages.context_processors.messages",
+                "dj_hasel.contextprocessors.hasel_settings",
+                ]
+                
+        }
+    },
+]
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -82,3 +107,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+BLOG_ACTIVE = True

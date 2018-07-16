@@ -1,0 +1,32 @@
+{% extends "gal/base.html" %}
+{% load thumbnail i18n bootstrap3 %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+    {% include "gal/sidemenu.html" with galleries=galleries category=0 %}
+    </div>
+    
+    <div class="col-md-8">
+<div class="thumbnail-container">
+<div class="thumbnail">
+{% thumbnail object.image "170x170" crop="center" as im %}
+<img data-src="{{ im.url }}" 
+     src="{{ im.url }}"
+     alt="{{ object.title }}">
+{% endthumbnail %}
+</div>
+</div>
+
+<form class="form" 
+      action="{% url 'management-edit-picture' gallery=category.gallery.slug category=category.slug pk=object.pk %}" 
+      method="POST"
+      enctype="multipart/form-data">
+{% csrf_token %}
+{% bootstrap_form form %}
+   <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+   <button type="submit" class="btn btn-primary" >{% trans "Save" %}</button>
+</form>
+    </div>
+</div>
+{% endblock content %}

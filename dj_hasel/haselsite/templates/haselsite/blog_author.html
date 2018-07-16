@@ -1,0 +1,38 @@
+{% extends "haselsite/blog_lists.html" %}
+
+{% block content_container %}
+<div id="blogcontainer" class="blogdetail">
+
+    <p class="breadcrumbs"><a href="{% url "blog" %}">Haselmaier Blog</a> &raquo; Autoren</p>
+    
+    
+    <div >
+        
+        <img src="{{author.image.url}}" style="float: left; max-height: 100px;" alt="Autor Bild" />
+
+        
+        <h1>{{ author.name}} <small>{{entries.count}} Blogbeitr{{ entries.count|pluralize:"ag,äge" }}</small></h1> 
+        <p>
+            {{author.job_title}}
+        </p>
+        
+    </div>
+
+    <div style="clear: both;" />
+
+    
+    {% include "haselsite/blog_sub_blogitem.html" with entries=entries %}
+
+   
+  
+
+
+</div>
+            
+
+
+
+
+
+</div>
+{% endblock %}

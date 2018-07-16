@@ -1,0 +1,58 @@
+{% extends "gal/modal_inner.html" %}
+{% load i18n bootstrap3 thumbnail %}
+{# optional parameter: form #}
+
+{% block modal_title %}{% trans "Edit Category" %}{% endblock %}
+
+{% block modal_inner %}
+
+{% csrf_token %}
+<div class="modal-body">
+     <div class="panel panel-default">
+     <form class="form" 
+          action="{% url 'management-edit-category' gallery=category.gallery.slug category=category.slug %}" 
+          method="POST">
+          {% csrf_token %}
+          <div class="panel-heading">{% trans "Rename Category" %}</div>
+          <div class="panel-body">
+          
+          {% bootstrap_form form %}
+          
+          </div>
+          
+          <div class="panel-footer">
+             <button type="submit" class="btn btn-primary">{% trans "Rename" %}</button>
+          </div>
+      </form>    
+      </div>
+      
+      <div class="panel panel-warning">
+          <form class="form" 
+          action="{% url 'management-delete-category' gallery=gallery.slug category=category.slug %}"
+          method="POST">
+            {% csrf_token %}
+          <div class="panel-heading">{% trans "Delete Category" %}</div>
+          <div class="panel-body">
+          <p>{% blocktrans %}You will remove this Category, the pictures might not be accessible anymore{% endblocktrans %}
+          <!-- 
+          <div class="form-group">
+            <p>
+              <label for="category-remove-files">{% trans "Delete Images from Server" %}</label>
+              <input type="checkbox" class="form-control" name="category-remove-files">
+            </p>
+          </div>
+           -->
+           
+          </div>
+          <div class="panel-footer">
+             <button type="submit" class="btn btn-warning">Remove</button>
+          </div>
+          </form>
+      </div>
+      
+</div>          <!-- /modal-body -->
+<div class="modal-footer">
+   <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+</div> <!-- /modal-footer -->
+
+{% endblock modal_inner %}

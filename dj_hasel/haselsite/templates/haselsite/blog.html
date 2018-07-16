@@ -1,0 +1,86 @@
+{% extends "haselsite/bs3_subsite.html" %}
+
+
+
+{% block title %}Haselmaier Blog: Wir lieben was wir tun{% endblock %}
+
+{% block css_at_top %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/group.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/blog.css">
+{% endblock %}
+
+
+{% block navigation %}
+    {% include "haselsite/navigation.html" with active="blog" %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block content_container %}
+
+
+
+<div id="blogcontainer" >
+    
+    <p class="breadcrumbs">Haselmaier Stories </p>
+    
+    <h1>Stories: Wir lieben was wir tun</h1>
+    <p class="blog_text">
+        Haselmaier und Partner bloggen über Einrichtung und Technik für den Menschen. 
+    </p>
+
+
+    
+    {% include "haselsite/blog_sub_blogitem.html" with entries=entries %}
+    
+
+
+</div>
+
+
+
+<h4>Zeige Artikel nach ...</h4>
+<div class="row">
+    <div class="col-md-4">
+        <h4>Unternehmensbereichen</h4>
+        <ul>
+        {% for brand in brands%}
+            <li><a href="{% url "blog_brand" brand.url %}">{{brand.name}}</a> ({{brand.count}})</li>
+        {%endfor%}
+        </ul>
+       
+    </div>    
+    <div class="col-md-4">
+        <h4>Schlagworten</h4>
+        <ul>
+        {% for tag in tags%}
+            <li><a href="{% url "blog_tag" tag|lower %}">{{tag}}</a> ({{tag.blogentry__count}})</li>
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h4>Autoren</h4>
+        <ul>
+        {% for author in authors %}
+            <li><a href="{% url "blog_author" author.id %}">{{author}}</a> ({{author.blogentry__count}})</li>
+        {%endfor%}
+        </ul>
+    </div> 
+</div>
+
+
+{% endblock content_container %}
+
+
+
+
+{% block footer%}
+  {% include "haselsite/footer.html" with active="blog" %}
+
+{% endblock %}

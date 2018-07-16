@@ -1,0 +1,85 @@
+/* custom style for blog
+ * base color: http://colorschemedesigner.com/csd-3.5/#5z41Tw0rmw0w0
+*/
+
+.navbar-default {
+	border-color:  #008A73;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background-color:  #008A73;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	background-color:  #008A73;
+}
+.navbar-default .navbar-toggle {
+	border-color:  #008A73;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color:  #008A73;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		background-color:  #008A73;
+	}
+}
+
+
+
+ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+    background: #008A73;
+    border: 1px solid #008A73;
+}
+
+
+
+
+/* blog specific stuff */
+#blogcontainer {
+	/* make space for nav top */
+	padding-top:  60px;
+}
+
+.breadcrumbs {
+	color: #999;
+}
+.breadcrumbs a, .breadcrumbs a:hover {
+	color: #999;
+	text-decoration: underline;
+}
+
+ul li a, ul li a:hover {
+	color: inherit;
+}
+
+
+
+/* detail blog page */
+.blogdetail img {
+	max-width: 100%;
+	
+}
+.blogdetail em {
+	color: #999;
+}
+.blogdetail em a {
+	color: inherit;
+}
+
+.blog_text p {
+color:#444;
+	font-family: "medium-content-serif-font",Georgia,Cambria,"Times New Roman",Times,serif;
+	font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -0.003em;	
+}
+
+.blog_text p:first-letter {
+    font-size:1.5em;
+}
+.blog_text a {
+  background-color: #f3f3f3;
+  color: #008A73;
+}

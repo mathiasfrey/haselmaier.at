@@ -105,9 +105,10 @@
           </div>
           
           
+          {% include "gal/preview/gallery.html" with gallery='e-technik' %}
+          <!--
           <h3>Referenzen</h3>
           <p>in Bearbeitung</p>
-          <!--
           <ul>
             <li>Verbund, 2015</li>
             <li>Wiener Linien, 2019</li>
@@ -134,6 +135,17 @@
           <cite>Martin Haselmaier</cite>
           </small>
         </blockquote>
+        
+
+        
+        {% block katalog %}
+            {% include "haselsite/katalog.html" with logo="e-technik_logo.png" link="https://www.yumpu.com/de/embed/view/G2KwBnOasuWHf9xI" %}
+        {% endblock %}
+
+
+        {% block blogs %}
+            {% include "haselsite/sub_blogs.html" with entries=blogs %}
+        {% endblock %}  
         
     </div>
     
