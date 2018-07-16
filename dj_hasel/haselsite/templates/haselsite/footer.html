@@ -35,7 +35,7 @@
                   {% if active == "wohn-art" %}
                     <a class="btn btn-default" href="tel:+43 7482 4581410">+43 7482 45814 10</a>
                   {% elif active == "e-technik" %}
-                    <a class="btn btn-default" href="tel:+43 7482 4581451">+43 7482 45814 51</a>
+                    <a class="btn btn-default" href="tel:+43 7482 42868">+43 7482 42868</a>
                   {% else %}
                     <a class="btn btn-default" href="tel:+43 7482 45814">+43 7482 45814</a>
                   {% endif %}
@@ -57,7 +57,14 @@
                 <dt>Anschrift</dt>
                 <dd>
                     <address class="adr">
-                        <span class="street-address">Miesenbach 72</span><br>
+                        <span class="street-address">Miesenbach 
+                            {% if active == "e-technik" %}
+                            74
+                            {% else %}
+                            72
+                            {% endif %}
+
+                        </span><br>
                         <span class="postal-code">A-3283</span>,
                         <span class="locality">St. Anton/Jeßnitz</span><br>
                     </address>
