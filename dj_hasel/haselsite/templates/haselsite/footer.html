@@ -65,8 +65,8 @@
                             {% endif %}
 
                         </span><br>
-                        <span class="postal-code">A-3270</span>,
-                        <span class="locality">Scheibbs</span><br>
+                        <span class="postal-code">{% if active == "e-technik" %}A-3270{% else %}A-3283{% endif %}</span>,
+                        <span class="locality">{% if active == "e-technik" %}Scheibbs{% else %}St. Anton/Jeßnitz{% endif %}</span><br>
                     </address>
                   
                 </dd>
