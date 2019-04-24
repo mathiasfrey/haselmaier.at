@@ -1,2 +1,6 @@
 *.pyc
 *.sqlite3
+# specific settings file
+dj_hasel/dj_hasel/Settings.py
+# vscode
+.vscode/

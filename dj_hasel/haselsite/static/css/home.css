@@ -160,3 +160,15 @@ footer a.footerinfo, footer a.footerinfo:hover, footer a.footerinfo:active, foot
     color: #ccc;
     text-decoration:underline;
 }
+
+#gdprbox {
+    position: fixed; 
+    bottom: 0px; 
+    background-color: rgb(53,62,72); 
+    width: 100%;
+    z-index: 2; 
+    padding: 15px; 
+    font-weight: lighter;
+    color: #ccc; 
+    box-shadow: 0 3px 3px 3px #000 ;
+}

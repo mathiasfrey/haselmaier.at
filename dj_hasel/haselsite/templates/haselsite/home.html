@@ -47,8 +47,7 @@
     
 </div>
 
-<div class="in" id="gdprbox" style="position: fixed; bottom: 0px; background-color: rgb(53,62,72); width: 100%; z-index: 2; padding: 15px; font-weight: lighter;
-color: #ccc;">
+<div class="in" id="gdprbox">
   <div class="row">
       <div class="col-xs-6" style="text-align:right;">
             <p>
@@ -62,6 +61,8 @@ color: #ccc;">
   </div>
   
 </div>
+
+
 
 <div id="blog_wrapper" class="">
     <div class="row">
@@ -91,11 +92,14 @@ color: #ccc;">
 
 
 {% block js_at_bottom %}
-<!-- tooltips on start page -->
 <script type="text/javascript">
 $(document).ready(function(){
+    
+    // tooltips on start page
     $('.enable_tooltip').tooltip();
+
 });
+
 </script>
 {% endblock %}
 
