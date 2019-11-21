@@ -4,3 +4,6 @@
 dj_hasel/dj_hasel/Settings.py
 # vscode
 .vscode/
+
+# venv
+venv/

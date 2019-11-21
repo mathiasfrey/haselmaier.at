@@ -44,6 +44,7 @@
     <div class="col-md-3 hidden-xs hidden-sm" id="contentScrollspy">
         <ul class="nav nav-tabs nav-stacked affix" id="myAffix"><!-- data-spy="affix"  data-offset-top="160" -->
             <li class="active"><a class="innerside-nav" href="#leitstelle">Leitstelle</a></li>
+            <li><a class="innerside-nav" href="#ttv">TTV</a></li>
             <li><a class="innerside-nav" href="#system">System</a></li>
             <li><a class="innerside-nav" href="#angebot">Angebot</a></li>
             <li><a class="innerside-nav" href="#projekte">Projekte</a></li>
@@ -88,6 +89,12 @@
 
       </div>
 
+      <div id="ttv" class="affix_contentarea">
+        {% block ttv %}
+            {% include "haselsite/ttv.html" %}
+        {% endblock %}
+      
+      </div>
 
       <div id="system" class="affix_contentarea">
         <h2>Technikmöbel mit System</h2>
@@ -378,7 +385,7 @@
             {% include "haselsite/konfigurator.html" %}
         {% endblock %}
         
-        
+
         {% block katalog %}
             {% include "haselsite/katalog.html" with logo="leitstellen_logo.png" link="https://www.yumpu.com/de/embed/view/EQ3yHOv2y9Z5Kzkh" %}
         {% endblock %}

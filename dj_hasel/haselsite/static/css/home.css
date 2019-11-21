@@ -132,6 +132,13 @@ a:hover > .subbrand.etechnik {
     background: rgba(0,90,75,.9);
 }
 
+.subbrand.configurator {
+    background: #fff;
+    border: 1px solid rgb(209,0,25) !important;
+}
+.subbrand.configurator h1 {
+    color: rgb(209,0,25) !important;
+}
 
 
 /*
