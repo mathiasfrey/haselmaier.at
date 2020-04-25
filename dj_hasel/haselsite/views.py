@@ -35,6 +35,7 @@ def leitstellen(request):
     
     context = {
         'blogs': blogs,
+        'request': request,
     }
     
     return render(request, 'haselsite/leitstellen.html', context)

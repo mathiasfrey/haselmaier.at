@@ -36,3 +36,45 @@ ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
     height:100%;
     
 }
+
+.reference img {
+	width: 100%;
+}
+.reference {
+	filter: grayscale(100%);
+}
+.reference:hover {
+	filter: none;
+	transition: filter 0.3s ease;
+}
+/*
+.reference::before {
+	content: "";
+    background-color: green;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.reference::after {
+    opacity: 0;
+    color: white;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.reference:hover::after, .reference:hover::before {
+    opacity: 1;
+}
+*/

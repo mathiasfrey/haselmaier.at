@@ -61,7 +61,25 @@
           
         <h2>Möbel für Leitstellen und Warten</h2>
             
-            
+        {% if request.GET.demo %}
+        
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="reference">
+              <img src="{{STATIC_URL}}img/leitstellen/OMV_logo.svg.png" alt=""  />
+            </div>
+          </div>
+          <div class="col-xs-4 reference"><img src="{{STATIC_URL}}img/leitstellen/Verbund_Logo.svg.png" alt=""  /></div>
+          <div class="col-xs-4 reference"><img src="{{STATIC_URL}}img/leitstellen/OMV_logo.svg.png" alt=""  /></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 reference"><img src="{{STATIC_URL}}img/leitstellen/Verbund_Logo.svg.png" alt=""  /></div>
+          <div class="col-xs-4 reference"><img src="{{STATIC_URL}}img/leitstellen/OMV_logo.svg.png" alt=""  /></div>
+          <div class="col-xs-4 reference"><img src="{{STATIC_URL}}img/corporatedesign/group_logo.png" alt=""  /></div>
+        </div>
+
+
+        {% endif %}
 
           
 
