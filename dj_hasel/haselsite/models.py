@@ -88,3 +88,23 @@ class BlogImage(models.Model):
     
     def __str__(self):
         return str(self.image)
+
+class LeitstellenProject(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.TextField(max_length=500, default='')
+    location = models.CharField(max_length=50)
+    start_year = models.CharField(max_length=4)
+    end_year = models.CharField(max_length=4, blank=True)
+
+    def __str__(self):
+        return self.title
+
+class LeitstellenProjectImage(models.Model):
+    image = models.ImageField(upload_to='leitstellen-images/')
+    project = models.ForeignKey(LeitstellenProject, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return str(self.image)
+
+
+
