@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import BlogEntry, BlogTag, BlogImage, BlogAuthor, LeitstellenProject, LeitstellenProjectImage
+from models import BlogEntry, BlogTag, BlogImage, BlogAuthor, LeitstellenProject
 
 class BlogEntryAdmin(admin.ModelAdmin):
     pass
@@ -24,6 +24,3 @@ class LeitstellenProjectAdmin(admin.ModelAdmin):
     pass
 admin.site.register(LeitstellenProject, LeitstellenProjectAdmin)
 
-class LeitstellenProjectImageAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(LeitstellenProjectImage, LeitstellenProjectImageAdmin)

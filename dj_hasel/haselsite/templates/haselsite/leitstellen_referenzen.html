@@ -1,24 +1,14 @@
 {% for project in projects %}
-{% for image in images %}
+
 <div class="row">
     <div class="col-xs-3">
        <a href="#" class="footerinfo" data-toggle="modal" data-target="#projects_{{project.id}}">
         <div class="reference" data-text="urxn">
-          <img src="{{STATIC_URL}}img/leitstellen/OMV_logo.svg.png" alt=""  />
+          <img src="{{ project.logo.url }}" alt=""  />
         </div>
       </a>
     </div>
-    <div class="col-xs-3 reference"><img src="{{STATIC_URL}}img/leitstellen/Verbund_Logo.svg.png" alt=""  /></div>
-    <div class="col-xs-3 reference"><img src="{{STATIC_URL}}img/leitstellen/OMV_logo.svg.png" alt=""  /></div>
-    <div class="col-xs-3 reference"><img src="{{STATIC_URL}}img/leitstellen/Verbund_Logo.svg.png" alt=""  /></div>
 </div>
-<div class="row">
-    <div class="col-xs-3 reference"><img src="{{STATIC_URL}}img/leitstellen/Verbund_Logo.svg.png" alt=""  /></div>
-    <div class="col-xs-3 reference"><img src="{{STATIC_URL}}img/leitstellen/Verbund_Logo.svg.png" alt=""  /></div>
-    <div class="col-xs-3 reference"><img src="{{STATIC_URL}}img/leitstellen/OMV_logo.svg.png" alt=""  /></div>
-    <div class="col-xs-3 reference"><img src="{{STATIC_URL}}img/corporatedesign/group_logo.png" alt=""  /></div>
-</div>
-
 
 <div class="modal fade" id="projects_{{project.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -28,11 +18,19 @@
           <h3 class="modal-title" id="myModalLabel">{{ project.title }} </h3>
         </div>
         <div class="modal-body">
-          <div class="col-xs-3 reference"><img src="{{ image.image.url }}" alt="{{ image.image }}"  /></div>
+          <div class="col-xs-3 reference"><img src="{{ project.logo.url }}" alt=""  /></div>
           <h3>JAHR</h3>
           <p>{{project.start_year}} - {{project.end_year}}</p>
           <h3>STANDORT</h3>
           <p>{{project.location}}</p>
+          <h3>FOTOS</h3>
+          <div class="row">
+              {% if project.image1 %}<div class="col-xs-3"><img class="responsive" src="{{ project.image1.url }}" alt=""/></div>{% endif %}
+              {% if project.image2 %}<div class="col-xs-3"><img class="responsive" src="{{ project.image2.url }}" alt=""/></div>{% endif %}
+              {% if project.image3 %}<div class="col-xs-3"><img class="responsive" src="{{ project.image3.url }}" alt=""/></div>{% endif %}
+          </div>
+
+
           <h3>PROJEKTUMFANG</h3>
           <p>
             {{project.description}}
@@ -44,5 +42,5 @@
       </div>
     </div>
     </div>
-{% endfor %}
+
 {% endfor %}

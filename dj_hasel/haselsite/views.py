@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.db.models import Count
 
-from models import BlogEntry, BlogTag, BlogAuthor, LeitstellenProject, LeitstellenProjectImage
+from models import BlogEntry, BlogTag, BlogAuthor, LeitstellenProject
 
 def home(request):
     
@@ -33,13 +33,11 @@ def leitstellen(request):
 
     blogs = BlogEntry.objects.filter(publish=True, brand='LS').order_by('-publish')
     projects = LeitstellenProject.objects.all()
-    images = LeitstellenProjectImage.objects.all()
-    
+
     context = {
         'blogs': blogs,
         'request': request,
         'projects': projects,
-        'images': images
     }
     
     return render(request, 'haselsite/leitstellen.html', context)
@@ -170,9 +168,4 @@ def blog_detail(request, slug):
     }
     
     return HttpResponse(template.render(context, request))
-
-def project_list(request):
-    projects = LeitstellenProject.objects.all()
-    images = LeitstellenProjectImage.objects.all()
-    return render(request, 'haselsite/leitstellen_referenzen.html', {'projects': projects, 'images': images})
 
