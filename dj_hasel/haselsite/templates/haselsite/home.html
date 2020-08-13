@@ -6,87 +6,88 @@
 
 {% block content %}
 
-<div id="imagevideo">
-    
-    <div id="logo_wrapper">
-        <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
-            <a href="{% url "group" %}" class="enable_tooltip" data-toggle="tooltip" data-placement="top"
-               title="Vier Kompetenzbereiche unter einem Dach">
-                <img src="{{ STATIC_URL }}img/corporatedesign/group_logo.png" alt="Haselmaier Group Logo" style="width: 100%" />
-            </a>
-            <div class="row">
-                <div class="col-xs-6"><a class="enable_tooltip" href="{% url "tischlerei" %}" data-toggle="tooltip" data-placement="bottom"
-                                                  title="Unser Herz schlägt für Holz"><div class="subbrand tischlerei"><h1><i class="glyphicon glyphicon-chevron-right"></i> Tischlerei</h1></div></a></div>
-                
-                
-                <div class="col-xs-6"><a class="enable_tooltip" href="{% url "leitstellen" %}" data-toggle="tooltip" data-placement="bottom"
-                                                  title="Möbel für Leitstellen"><div class="subbrand leitstellen"><h1><i class="glyphicon glyphicon-chevron-right"></i> Leitstellen</h1></div></a></div>
-                
-                
-                
-            </div>
-            
-        </div>
-    </div>
-
-
-   
-    <video autoplay poster="//assets.haselmaier.at/handholz.jpg" id="bgvid" class="hidden-xs">
-      
-      <!-- Serve video content via streaming server -->
-      <source src="//assets.haselmaier.at/handholz_final.webm" type="video/webm">
-      <source src="//assets.haselmaier.at/handholz_final.mp4" type="video/mp4">
-      <source src="//assets.haselmaier.at/handholz_final.ogv" type="video/ogg">
-        
-    </video>
-    
-    <div id="bg_mobile" class="visible-xs">
-        <!-- do not display video  on mobile phones -->
-    </div>
-
-    
-</div>
-
-<div class="in" id="gdprbox">
-  <div class="row">
-      <div class="col-xs-6" style="text-align:right;">
-            <p>
-                    Wir hinterlassen nach getaner Arbeit keinen Dreck.<br/>
-                    Ebensowenig speichern wir Cookies auf Ihrem Rechner.🍪
-            </p>  
-      </div>
-      <div class="col-xs-6" style="text-align:left;">
-            <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#gdprbox">Sehr gut!</button>
-      </div>
-  </div>
-  
-</div>
-
-
-
-<div id="blog_wrapper" class="">
+<div id="logo_wrapper">
     <div class="row">
                         
-        <div class="col-md-offset-9 col-md-2">
-            <p>
-                Haselmaier bloggt!
-            </p>
-            <a class="enable_tooltip" href="{% url "blog" %}" data-toggle="tooltip" data-placement="bottom"
-                                          title="Haselmaier bloggt über Einrichtung und Technik für den Menschen">
-                <div class="subbrand blog"><h1><i class="glyphicon glyphicon-chevron-right"></i> Stories</h1></div>
-            </a>
+        <div class="col-md-offset-7 col-md-4">
+            <div class="row">
+                <div class="col-xs-6">
 
-            <p>Leitstelle online konfigurieren</p>
-            <a class="enable_tooltip" href="/configurator" data-toggle="tooltip" data-placement="bottom"
-                title="Leitstellen Online-Konfigurator">
-                <div class="subbrand configurator"><h1><i class="glyphicon glyphicon-chevron-right"></i> Konfigurator</h1></div>
-            </a>
+                    <a class="enable_tooltip" href="{% url "blog" %}" data-toggle="tooltip" data-placement="bottom"
+                                                  title="Haselmaier bloggt über Einrichtung und Technik für den Menschen">
+                        <div class="subbrand blog"><h1><i class="glyphicon glyphicon-chevron-right"></i> Stories</h1></div>
+                    </a>
+                </div>
+                <div class="col-xs-6">
+                    <a class="enable_tooltip" href="/configurator" data-toggle="tooltip" data-placement="bottom"
+                        title="Leitstellen Online-Konfigurator">
+                        <div class="subbrand configurator"><h1><i class="glyphicon glyphicon-chevron-right"></i> Konfigurator</h1></div>
+                    </a>
+                </div>
+            </div>
+
         </div>
 
     </div>
 
-    </div>    
+    <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
+
+        <a href="{% url "group" %}" class="enable_tooltip" data-toggle="tooltip" data-placement="top"
+            title="Vier Kompetenzbereiche unter einem Dach">
+            <img src="{{ STATIC_URL }}img/corporatedesign/group_logo-bw.png" alt="Haselmaier Group Logo" style="width: 100%" />
+        </a>
+
+        <div class="row">
+            <div class="col-xs-4 key-message">
+                <span class="underline">_</span>Wir produzieren in Österreich
+            </div>
+            <div class="col-xs-4 key-message">
+                <span class="underline leitstelle">_</span>Arbeitsplätze für kritische Infratsruktur
+            </div>
+            <div class="col-xs-4 key-message">
+                <span class="underline e-technik">_</span>Der Kern einer smarten Welt
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-4">
+                <a class="enable_tooltip" href="{% url "tischlerei" %}" data-toggle="tooltip" data-placement="bottom"
+                    title="Unser Herz schlägt für Holz"><div class="subbrand tischlerei"><h1><i class="glyphicon glyphicon-chevron-right"></i> Tischlerei</h1></div></a>
+                </div>
+            
+            
+            <div class="col-xs-4">
+                <a class="enable_tooltip" href="{% url "leitstellen" %}" data-toggle="tooltip" data-placement="bottom"
+                    title="Möbel für Leitstellen"><div class="subbrand leitstellen"><h1><i class="glyphicon glyphicon-chevron-right"></i> Leitstellen</h1></div></a>
+                </div>
+            
+            <div class="col-xs-4">
+                <a class="enable_tooltip" href="{% url "e_technik" %}" data-toggle="tooltip" data-placement="bottom"
+                    title="Der Kern einer smarten Welt"><div class="subbrand etechnik"><h1><i class="glyphicon glyphicon-chevron-right"></i> E-Technik</h1></div></a>
+                </div>            
+            
+        </div>
+        
+    </div>
 </div>
+
+
+<div class="in" id="gdprbox">
+    <div class="row">
+        <div class="col-xs-6" style="text-align:right;">
+                <p>
+                        Wir hinterlassen nach getaner Arbeit keinen Dreck.<br/>
+                        Ebensowenig speichern wir Cookies auf Ihrem Rechner.🍪
+                </p>  
+        </div>
+        <div class="col-xs-6" style="text-align:left;">
+                <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#gdprbox">Sehr gut!</button>
+        </div>
+    </div>
+    
+</div>
+
+
 
 {% endblock content %}
 

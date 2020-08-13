@@ -1,12 +1,7 @@
 
-<div class="container"
-     {% if active == "wohn-art" %}
-       id="footer_container_wohnart"
-     {% elif active == "e-technik" %}
-       id="footer_container_etechnik"
-     {% else %}
-       id="footer_container"
-     {% endif %}>
+<div class="container {% if active == 'wohn-art' %}wohnart{% elif active == 'e-technik' %}etechnik{% endif %}"
+    id="footer_container">
+
 <footer>
     <div class="row-fluid" >
         
