@@ -1,32 +1,37 @@
-/* custom style for wohn-art */
+html, body {
+    /*height: 100%;*/
+    background: #fff;
+    background-image: none;
+
+}
 
 .navbar-default {
-	border-color: rgb(209,0,25);
+	border-color:rgb(53,62,72);
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	background-color: rgb(209,0,25);
+	background-color:rgb(53,62,72);
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-	background-color: rgb(209,0,25);
+	background-color:rgb(53,62,72);
 }
 .navbar-default .navbar-toggle {
-	border-color: rgb(209,0,25);
+	border-color:rgb(53,62,72);
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: rgb(209,0,25);
+	background-color:rgb(53,62,72);
 }
 
 @media (max-width: 767px) {
 	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-		background-color: rgb(209,0,25);
+		background-color:rgb(53,62,72);
 	}
 }
 
 
 
 ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
-    background: rgb(209,0,25);
-    border: 1px solid rgb(209,0,25);
+    background:rgb(53,62,72);
+    border: 1px solid rgb(53,62,72);
 }
 
 #jumbotron {

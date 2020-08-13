@@ -1,4 +1,10 @@
 /* custom style for e-technik */
+html, body {
+    /*height: 100%;*/
+    background: #fff;
+    background-image: none;
+
+}
 
 .navbar-default {
 	border-color: rgb(0,118,189);

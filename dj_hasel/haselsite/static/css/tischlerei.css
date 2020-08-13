@@ -1,5 +1,9 @@
-/* custom style for wohn-art */
+html, body {
+    /*height: 100%;*/
+    background: #fff;
+    background-image: none;
 
+}
 .navbar-default {
 	border-color: rgb(209,0,25);
 }
