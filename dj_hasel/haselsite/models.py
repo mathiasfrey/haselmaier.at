@@ -91,20 +91,17 @@ class BlogImage(models.Model):
 
 class LeitstellenProject(models.Model):
     title = models.CharField(max_length=150)
-    description = models.TextField(max_length=500, default='')
+    description = models.TextField(max_length=900, default='')
     location = models.CharField(max_length=50)
     start_year = models.CharField(max_length=4)
     end_year = models.CharField(max_length=4, blank=True)
+    logo = models.ImageField(upload_to='leitstellen-images/', default='')
+    image1 = models.ImageField(upload_to='leitstellen-images/', blank=True, default='')
+    image2 = models.ImageField(upload_to='leitstellen-images/', blank=True, default='')
+    image3 = models.ImageField(upload_to='leitstellen-images/', blank=True, default='')
 
     def __str__(self):
         return self.title
-
-class LeitstellenProjectImage(models.Model):
-    image = models.ImageField(upload_to='leitstellen-images/')
-    project = models.ForeignKey(LeitstellenProject, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return str(self.image)
 
 
 
