@@ -2,6 +2,13 @@
  * base color: http://colorschemedesigner.com/csd-3.5/#5z41Tw0rmw0w0
 */
 
+html, body {
+    /*height: 100%;*/
+    background: #fff;
+    background-image: none;
+
+}
+
 .navbar-default {
 	border-color:  #008A73;
 }
