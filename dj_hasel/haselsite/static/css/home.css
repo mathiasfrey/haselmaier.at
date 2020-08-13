@@ -22,7 +22,7 @@ light grey aeadac
 */
 
 html, body {
-    /*height: 100%;*/
+    height: 100%;
     background: #7e7574;
     /* https://www.pexels.com/photo/trees-1061623/ */
     background: url(../img/leitstellen/trees.jpg) no-repeat;
@@ -36,12 +36,8 @@ html, body {
     This is needed to position div according to bootstrap's fluid grid.
     Otherwise centering would not work.
     */
-    
     width:100%;
-    
-    position: relative;;
-
-    margin-bottom: 5em;
+    min-height: 70%;
 
 }
 
