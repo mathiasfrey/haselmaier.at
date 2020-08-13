@@ -160,3 +160,8 @@ footer a.footerinfo, footer a.footerinfo:hover, footer a.footerinfo:active, foot
     color: #ccc; 
     box-shadow: 0 3px 3px 3px #000 ;
 }
+
+p.readability {
+    font-size: 1.2em;
+    margin: 1em 0 1em 0;
+}

@@ -7,3 +7,6 @@ dj_hasel/dj_hasel/Settings.py
 
 # venv
 venv/
+
+# data / images
+leitstellen-images/*

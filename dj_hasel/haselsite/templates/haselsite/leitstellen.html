@@ -43,11 +43,11 @@
     
     <div class="col-md-3 hidden-xs hidden-sm" id="contentScrollspy">
         <ul class="nav nav-tabs nav-stacked affix" id="myAffix"><!-- data-spy="affix"  data-offset-top="160" -->
-            <li class="active"><a class="innerside-nav" href="#leitstelle">Leitstelle</a></li>
-            <li><a class="innerside-nav" href="#ttv">TTV</a></li>
-            <li><a class="innerside-nav" href="#system">System</a></li>
-            <li><a class="innerside-nav" href="#angebot">Angebot</a></li>
-            <li><a class="innerside-nav" href="#projekte">Projekte</a></li>
+            <li class="active"><a class="innerside-nav" href="#leitstelle">_Leitstelle</a></li>
+            <li><a class="innerside-nav" href="#ttv">_TTV</a></li>
+            <li><a class="innerside-nav" href="#projekte">_Projekte</a></li>
+            <li><a class="innerside-nav" href="#angebot">_Angebot</a></li>
+            
         </ul>
     </div>
     
@@ -59,29 +59,23 @@
 
         <h1>Haselmaier Leitstellen</h1>
           
-        <h2>Möbel für Leitstellen und Warten</h2>
-            
-        {% if request.GET.demo %}
-        {% include "haselsite/leitstellen_referenzen.html" %}
-        {% endif %}
-
-          
-
-        <p class="">
+        
+        <p class="readability">
         Haselmaier entwickelt ergonomische Technikmöbel, die Arbeitsschritte erleichtern und konzentriertes Arbeiten ermöglichen.
         Die Technik im jeweiligen Kontrollraum bzw. der Einsatzzentrale wird in die Möbel passgenau integriert.
         </p>
         
         
-        <p>
+        <p class="readability">
         Auf diese Weise bleiben Kabel, Leitungen und Elektronik "unsichtbar" und ermöglichen einen reibungslosen Arbeitsfluss.
         Der Zusammenbau erfolgt fix und fertig vor Ort zusammen mit der gesamten Technik.
 
         </p>          
           
-
-            
-
+        <div>
+          <img src="{{STATIC_URL}}img/leitstellen/leitstelle-architektur.jpg" alt="" width="100%" />
+        </div>
+        
 
             
 
@@ -96,79 +90,21 @@
       
       </div>
 
-      <div id="system" class="affix_contentarea">
-        <h2>Technikmöbel mit System</h2>
-        <p class="">
-        Am Anfang stand eine Idee: das Bauen von Tischen für Leitstellen. Daraus haben sich im Laufe der
-        Jahre komplette Systeme entwickelt.
-        </p>
-        
-        
-        
-        <div class="row">
-          <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_01.jpg" alt="" width="100%" class="thumbnail" />
-          </div>
-          <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/leitstelle_02.jpg" alt="" width="100%" class="thumbnail"/>
-          </div>
-          <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/LeitstandAllmendingenTische_sw1_72dpi.jpg" alt="" width="100%" class="thumbnail"/>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/DSC_7219_sw_72dpi.jpg" alt="" width="100%" class="thumbnail" />
-          </div>
-          <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/DSC_7444_72dpi.jpg" alt="" width="100%" class="thumbnail"/>
-          </div>
-          <div class="col-md-4">
-            <img src="{{STATIC_URL}}img/leitstellen/DSC_7861_a_72dpi.jpg" alt="" width="100%" class="thumbnail"/>
-          </div>
-          
-        </div>
-        
-        
-        <p>
-        Heute baut Leitstellen Haselmaier alles, was eine Warte benötigt und sich durch Möbel bewegen
-        lässt: Wafer Table, Beamer Blackboard, Interface Terminals oder Kameralift. Unsere Technikmöbel mit
-        Sonderfunktion sind innovativ, funktionell und zu 100 Prozent ergonomisch.
-        </p>
-        
-        <p>
-        Nur wer sich wohlfühlt, kann unter Druck gut arbeiten. Unsere Technikmöbel sorgen dafür, dass in
-        der Einsatzzentrale, Leitstelle, Warte und im Kontrollraum die Arbeit leicht von der Hand geht.          
-        </p>
-      
-      </div>
+    
 
       
-      <div id="angebot" class="affix_contentarea">
-        <h2>Unser Angebot</h2>
-        <ul>
-            <li>Entwicklung, Design und Umsetzung von modularen und intelligenten Systemen</li>
-            <li>Systeme mit größter Betriebssicherheit</li>
-            <li>Planung umfassender Raumkonzepte</li>
-            <li>Entwicklung und Eigenfertigung</li>
-            <li>Intelligentes Design aus der hauseigenen Tischlerei</li>
-            <li>Entwicklung und Bau elektrotechnischer Komponenten</li>
-            <li>Verfügbarkeit von Zukaufkomponenten wie Hubsäulen ab Lager</li>
-            <li>Fachgerechte Montage und Integration aller Komponenten vor Ort</li>
-            <li>Rasche Serviceleistung</li>
-        </ul>
-        
-        
 
-        
-        
-      </div>
 
       <div id="projekte" class="affix_contentarea">
-        <h2>Projekte &amp; Referenzen</h2>
+        <h2>_Projekte &amp; Partner</h2>
 
-          
+        {% if request.GET.demo %}
+        {% include "haselsite/leitstellen_referenzen.html" %}
+
+        <div style="background-color: yellow;">
+        UND ALLES DRUNTER BIS _ANGEBOT IGNORIEREN!
+        </div>
+        {% endif %}
 
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -360,9 +296,25 @@
           
       </div>
 
+      <div id="angebot" class="affix_contentarea">
+        <h2>_Angebot</h2>
+        <ul style="list-style-type: none; ">
+            <li>_Entwicklung, Design und Umsetzung von modularen und intelligenten Systemen</li>
+            <li>_Systeme mit größter Betriebssicherheit</li>
+            <li>_Planung umfassender Raumkonzepte</li>
+            <li>_Entwicklung und Eigenfertigung</li>
+            <li>_Intelligentes Design aus der hauseigenen Tischlerei</li>
+            <li>_Entwicklung und Bau elektrotechnischer Komponenten</li>
+            <li>_Verfügbarkeit von Zukaufkomponenten wie Hubsäulen ab Lager</li>
+            <li>_Fachgerechte Montage und Integration aller Komponenten vor Ort</li>
+            <li>_Rasche Serviceleistung</li>
+        </ul>
+        
+      </div>
 
     
     </div>
+    
     
     <div class="col-md-3">
         <p />
@@ -380,7 +332,9 @@
           </small>
         </blockquote>
         
-        
+        {% comment %}
+
+
         {% block konfigurator %}
             {% include "haselsite/konfigurator.html" %}
         {% endblock %}
@@ -395,7 +349,10 @@
             {% include "haselsite/sub_blogs.html" with entries=blogs %}
         {% endblock %}  
         
+        {% endcomment %}
+
     </div>
+    
 
 </div>
 
