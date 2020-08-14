@@ -43,57 +43,19 @@ ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
     
 }
 
-.reference img {
+.reference-logo img {
     width: 100%;
     
 }
-.reference {
+.reference-filter {
     filter: grayscale(100%);
     min-height:100px;
     border:1px solid #fff;
     padding:5px;
 }
-.reference:hover {
+.reference-filter:hover {
 	filter: none;
     transition: filter 0.3s ease;
     border: 1px solid #eee;
     transition: border 0.3s ease;
 }
-
-
-.responsive {
-  width: 100%;
-  height: auto;
-}
-/*
-.reference::after {
-	content: attr(data-text) "\A";
-    background-color: green;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s ease;
-    -moz-transition: opacity 0.3s ease;
-    -ms-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
-}
-
-
-.reference::after {
-    opacity: 0;
-    color: white;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-transition: opacity 0.3s ease;
-    -moz-transition: opacity 0.3s ease;
-    -ms-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
-}
-
-.reference:hover::after, .reference:hover::before {
-    opacity: 1;
-}
-*/
