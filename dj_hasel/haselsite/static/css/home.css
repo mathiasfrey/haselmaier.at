@@ -19,6 +19,8 @@ colors found in mockups
 dark grey 7e7574
 medium grey 9d9694
 light grey aeadac
+
+leitstelle: #455457;
 */
 
 html, body {
@@ -76,10 +78,12 @@ html, body {
 }
 /* some magic with clicking the links*/
 a:active > .subbrand.wohnart,
-a:hover > .subbrand.wohnart,
-a:active > .subbrand.leitstellen,
-a:hover > .subbrand.leitstellen {
+a:hover > .subbrand.wohnart {
     background: rgb(53,62,72);
+}
+/* one color for leitstelle */
+a > .subbrand.leitstellen {
+    background: #455457;
 }
 a:active > .subbrand.tischlerei,
 a:hover > .subbrand.tischlerei {

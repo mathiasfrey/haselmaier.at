@@ -38,6 +38,9 @@ html, body {
 	color: #ffffff;
 	background-color: rgb(209,0,25);
 }
+.navbar-default .navbar-nav > .leitstelle > a,.navbar-default .navbar-nav > .leitstelle > a:hover, .navbar-default .navbar-nav > .leiitstelle > a:focus {
+    background-color: #455457;
+}
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
 	color: #ffffff;
 	background-color: rgb(209,0,25);
