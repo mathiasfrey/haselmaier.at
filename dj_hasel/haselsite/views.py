@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from django.db.models import Count
@@ -31,17 +31,18 @@ def wohn_art(request):
     
 def leitstellen(request):
 
-    blogs = BlogEntry.objects.filter(publish=True, brand='LS').order_by('-publish')
-    projects = LeitstellenProject.objects.all()
+    #blogs = BlogEntry.objects.filter(publish=True, brand='LS').order_by('-publish')
+    #projects = LeitstellenProject.objects.all()
 
-    context = {
-        'blogs': blogs,
-        'request': request,
-        'projects': projects,
-    }
+    #context = {
+    #    'blogs': blogs,
+    #    'request': request,
+    #    'projects': projects,
+    #}
     
-    return render(request, 'haselsite/leitstellen.html', context)
+    #return render(request, 'haselsite/leitstellen.html', context)
 
+    return redirect("https://www.dieleitstelle.at/")
     
 def tischlerei(request):
 
