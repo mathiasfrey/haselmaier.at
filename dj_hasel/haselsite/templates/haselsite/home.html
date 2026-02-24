@@ -9,11 +9,14 @@
 <div id="homepage-valign">
 
     <div class="col-xs-12 col-md-8 col-lg-6" id="logo">
-
+        {%
         <a href="{% url "group" %}" class="enable_tooltip" data-toggle="tooltip" data-placement="top"
             title="Vier Kompetenzbereiche unter einem Dach">
+        %}
             <img src="{{ STATIC_URL }}img/corporatedesign/group_logo-bw.png" alt="Haselmaier Group Logo" style="width: 100%" />
+        {%
         </a>
+        %}
 
         <div class="row">
             <div class="col-xs-4 key-message">
