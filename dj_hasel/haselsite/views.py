@@ -46,23 +46,27 @@ def leitstellen(request):
     
 def tischlerei(request):
 
-    blogs = BlogEntry.objects.filter(publish=True, brand='TI').order_by('-publish')
-    
-    context = {
-        'blogs': blogs,
-    }
-    
-    return render(request, 'haselsite/tischlerei.html', context)
+    #blogs = BlogEntry.objects.filter(publish=True, brand='TI').order_by('-publish')
+    #
+    #context = {
+    #    'blogs': blogs,
+    #}
+    #
+    #return render(request, 'haselsite/tischlerei.html', context)
+
+    return redirect("https://haselmaier-tischlerei.at/")
     
 def e_technik(request):
 
-    blogs = BlogEntry.objects.filter(publish=True, brand='ET').order_by('-publish')
-    
-    context = {
-        'blogs': blogs,
-    }
-    
-    return render(request, 'haselsite/e-technik.html', context)
+    #blogs = BlogEntry.objects.filter(publish=True, brand='ET').order_by('-publish')
+    #
+    #context = {
+    #    'blogs': blogs,
+    #}
+    #
+    #return render(request, 'haselsite/e-technik.html', context)
+
+    return redirect("https://www.haselmaier-elektro.at/")
 
 def test(request):
     
